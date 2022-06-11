@@ -1,0 +1,12 @@
+# Created at 2022-06-06T00:12:36.506
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'and0225)                | PASS       | 257        |'.
+
+# Created at 2022-06-06T00:12:36.511
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '| By.xpath: //button[@id='logInBtn']                                     | should(exist)                        | PASS       | 84         |'.
+
+# Created at 2022-06-06T00:12:36.514
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '| By.xpath: //button[@id='logInBtn']                                     | click()                              | PASS       | 143        |'.
+
+# Created at 2022-06-06T00:12:36.517
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream '+------------------------------------------------------------------------+--------------------------------------+------------+------------+'.
+

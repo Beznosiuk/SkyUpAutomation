@@ -1,0 +1,1697 @@
+<html lang="uk" dir="ltr" class="html html--light" id="html"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+        <style>
+        /* COMMON modal и main-loader - чисто чтоб не блымало, так как в css есть повторно подключение этих стилей */
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .main-loader {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .nav {
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* header */
+        .header__nav-link {
+            color: white;
+            padding-left: 15px;
+	        padding-right: 15px;
+        }
+        .header__nav .icon-active-menu {
+            fill: white;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+        }
+        .header__currency-list,
+        .header__lang-list {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .header-dropdown__unit {
+            opacity: 0;
+		    visibility: hidden;
+        }
+        /* cabinet-nav */
+        /* .cabinet-nav {
+            opacity: 0;
+            visibility: hidden;
+        } */
+        /* seatsel-passeng */
+        .seatsel-passeng {
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* cookie-modal */
+        .cookie-modal--hidden {
+            transform: translateY(500px);
+        }
+
+        /* home */
+        .site-index-page .form.form--hidden,
+        .site-promo-page .form.form--hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* search-results */
+        .result.result--hidden {
+            opacity: 0;
+            visibility: hidden;
+            /* absolute для того чтоб высота страницы не прыгала */
+            position: absolute;
+        }
+        .results-loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* board */
+        .site-board-page .flight-popup__inner {
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* tourists addservices */
+        .tourist-l-control__btns-body {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+        }
+        .tourist-l-control__btns-body--visible {
+            opacity: 1;
+			visibility: visible;
+			transform: translateY(0px);
+        }
+        /* tourists addservices */
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+        }
+        .dropdown--visible {
+            opacity: 1;
+			visibility: visible;
+			transform: translateY(0px);
+        }
+    </style>
+
+        <script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-J7PTRZWBS7&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://tag.rmp.rakuten.com/124401.ct.js"></script><script src="https://connect.facebook.net/signals/config/380810819126846?v=2.9.61&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://esputnik.com/scripts/v1/public/scripts?apiKey=eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0NTI0ZWZhYTJkYzI2MGRmYTM4YTE1NDBlMWIwYjQ1OGNmYTA3YTFmMzg1Y2Q1ZGQxYWI4NDE2OWQ3OGY2YzBhMmJhMGZhMzQwMmI0YTIyZDYxNGIzY2Y0ZDgzZWRkMTcwZWU5ZWY3YTA3MjI3Y2JiYjIzNzQ5OTU3YzRmZmEwM2Y0ODhkNjYwMjQ3ZjY1NTNhZDYwYjEzYWEwYzUxYTRkNTI5OWVlOTU5ZTFiNjg1OGYzMGFhODljOTRhODhhODU2NSJ9.Fyg34IZ2Y5Xemj5xGA1ctDtYeLASgQqjmDj_fWxnPM7lYv96WPm_bYv5EAJy3MYFP9aGKdARQlKCWpWHh0RAfQ&amp;domain=F2DEA82A-AC14-40A1-AEBE-27EE7AB8A521"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TGR5959"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TGR5959');</script>
+    
+            
+                    <script>
+            (function(i,s,o,g,r,a,m){
+            i["esSdk"] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, a=s.createElement(o), m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g;
+            m.parentNode.insertBefore(a,m)}
+            ) (window, document, "script", "https://esputnik.com/scripts/v1/public/scripts?apiKey=eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0NTI0ZWZhYTJkYzI2MGRmYTM4YTE1NDBlMWIwYjQ1OGNmYTA3YTFmMzg1Y2Q1ZGQxYWI4NDE2OWQ3OGY2YzBhMmJhMGZhMzQwMmI0YTIyZDYxNGIzY2Y0ZDgzZWRkMTcwZWU5ZWY3YTA3MjI3Y2JiYjIzNzQ5OTU3YzRmZmEwM2Y0ODhkNjYwMjQ3ZjY1NTNhZDYwYjEzYWEwYzUxYTRkNTI5OWVlOTU5ZTFiNjg1OGYzMGFhODljOTRhODhhODU2NSJ9.Fyg34IZ2Y5Xemj5xGA1ctDtYeLASgQqjmDj_fWxnPM7lYv96WPm_bYv5EAJy3MYFP9aGKdARQlKCWpWHh0RAfQ&domain=F2DEA82A-AC14-40A1-AEBE-27EE7AB8A521", "es");
+            es("pushOn");
+        </script>
+        
+                <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '380810819126846');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=380810819126846&ev=PageView&noscript=1"
+        /></noscript>
+        
+                <script type="text/javascript">
+            (function (url) {
+                /*Tracking Bootstrap Set Up DataLayer objects/properties here*/
+                if(!window.DataLayer){
+                    window.DataLayer = {};
+                }
+                if(!DataLayer.events){
+                    DataLayer.events = {};
+                }
+                DataLayer.events.SPIVersion = DataLayer.events.SPIVersion || "3.4.1";
+                DataLayer.events.SiteSection = "1";
+
+                var loc, ct = document.createElement("script");
+                ct.type = "text/javascript";
+                ct.async = true; ct.src = url; loc = document.getElementsByTagName('script')[0];
+                loc.parentNode.insertBefore(ct, loc);
+            }(document.location.protocol + "//tag.rmp.rakuten.com/124401.ct.js"));
+        </script>
+        
+                         <script src="https://browser.sentry-cdn.com/5.11.0/bundle.min.js" crossorigin="anonymous"></script>
+        <script>
+            Sentry.init({
+                dsn: 'https://47c07b99de4647efae39ec33ac280572@sentry.io/1468780',
+                environment: 'prod'
+            });
+            Sentry.configureScope(function (scope) {
+                scope.setTag("language", "uk");
+                scope.setTag("currency", "UAH");
+                            });</script>
+                        
+
+    
+<meta name="description" itemprop="description" content="✈ Розклад рейсів авіакомпаніі SkyUp Airlines ➤ Напрями польотів, час вильоту і прибуття в аеропорти, статус рейсів">
+<meta name="keywords" content="Пошук авіаквитків, SkyUp, авіаквитки, авіакомпанія SkyUp, дешеві авіаквитки, чартерні рейси, лоукостер">
+<meta property="og:site_name" content="SkyUp Airlines">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skyup.aero/uk/">
+<meta property="og:title" content="Розклад рейсів, напрямки і час вильоту і прильоту SkyUp Airlines">
+<meta property="og:description" content="✈ Розклад рейсів авіакомпаніі SkyUp Airlines ➤ Напрями польотів, час вильоту і прибуття в аеропорти, статус рейсів">
+<meta property="og:image" content="https://skyup.aero/build/img/content/shareSkyUp.png?v=112">
+<link rel="image_src" href="https://skyup.aero/build/img/content/shareSkyUp.png?v=112">
+
+
+
+<meta name="twitter:image" content="https://skyup.aero/build/img/content/shareSkyUp.png?v=112">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Розклад рейсів, напрямки і час вильоту і прильоту SkyUp Airlines">
+<meta name="twitter:description" content="✈ Розклад рейсів авіакомпаніі SkyUp Airlines ➤ Напрями польотів, час вильоту і прибуття в аеропорти, статус рейсів">
+<link rel="publisher" href="https://skyup.aero/uk/">
+<meta itemprop="name" content="Розклад рейсів, напрямки і час вильоту і прильоту SkyUp Airlines">
+<meta itemprop="description" content="✈ Розклад рейсів авіакомпаніі SkyUp Airlines ➤ Напрями польотів, час вильоту і прибуття в аеропорти, статус рейсів">
+<meta itemprop="image" content="https://skyup.aero/build/img/content/shareSkyUp.png?v=112">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=112">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=112">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=112">
+<link rel="manifest" href="/manifest.json?v=112">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff6b00">
+<meta name="msapplication-TileColor" content="#ff6b00">
+
+<meta name="theme-color" content="#000000">
+<meta name="msapplication-navbutton-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+
+    <meta name="csrf-param" content="_csrf-frontend">
+    <meta name="csrf-token" content="pulJfLgRW3t3OdsQ2jWiJXi6PkRJHn22c-mxkMZR0YDnrg8rjWg0PQ9trimdDJUSDdZ6HSFkDPVHn8TdtQuw0w==">
+    <title>Розклад рейсів, напрямки і час вильоту і прильоту SkyUp Airlines</title>
+    <link href="https://skyup.aero/uk/best" rel="alternate" hreflang="uk">
+<link href="https://skyup.aero/en/best" rel="alternate" hreflang="en">
+<link href="https://skyup.aero/uk/best" rel="canonical">
+<link href="/build/css/main.css?v=1649186301" rel="stylesheet">
+<link href="/build/css/best.css?v=1643897706" rel="stylesheet"><meta http-equiv="origin-trial" content="A9wkrvp9y21k30U9lU7MJMjBj4USjLrGwV+Z8zO3J3ZBH139DOnCv3XLK2Ii40S94HG1SZ/Zeg2GSHOD3wlWngYAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/342550173/?random=1654549499587&amp;cv=9&amp;fst=1654549499587&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_his=7&amp;u_tz=180&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;gtm=2wg610&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fskyup.aero%2Fuk%2Fbest&amp;tiba=%D0%A0%D0%BE%D0%B7%D0%BA%D0%BB%D0%B0%D0%B4%20%D1%80%D0%B5%D0%B9%D1%81%D1%96%D0%B2%2C%20%D0%BD%D0%B0%D0%BF%D1%80%D1%8F%D0%BC%D0%BA%D0%B8%20%D1%96%20%D1%87%D0%B0%D1%81%20%D0%B2%D0%B8%D0%BB%D1%8C%D0%BE%D1%82%D1%83%20%D1%96%20%D0%BF%D1%80%D0%B8%D0%BB%D1%8C&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script><style type="text/css">
+.vfm--fixed[data-v-2836fdb5] {
+  position: fixed;
+}
+.vfm--absolute[data-v-2836fdb5] {
+  position: absolute;
+}
+.vfm--inset[data-v-2836fdb5] {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.vfm--overlay[data-v-2836fdb5] {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.vfm--prevent-none[data-v-2836fdb5] {
+  pointer-events: none;
+}
+.vfm--prevent-auto[data-v-2836fdb5] {
+  pointer-events: auto;
+}
+.vfm--outline-none[data-v-2836fdb5]:focus {
+  outline: none;
+}
+.vfm-enter-active[data-v-2836fdb5],
+.vfm-leave-active[data-v-2836fdb5] {
+  transition: opacity 0.2s;
+}
+.vfm-enter-from[data-v-2836fdb5],
+.vfm-leave-to[data-v-2836fdb5] {
+  opacity: 0;
+}
+.vfm--touch-none[data-v-2836fdb5] {
+  touch-action: none;
+}
+.vfm--select-none[data-v-2836fdb5] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.vfm--resize-tr[data-v-2836fdb5],
+.vfm--resize-br[data-v-2836fdb5],
+.vfm--resize-bl[data-v-2836fdb5],
+.vfm--resize-tl[data-v-2836fdb5] {
+  width: 12px;
+  height: 12px;
+  z-index: 10;
+}
+.vfm--resize-t[data-v-2836fdb5] {
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  cursor: ns-resize;
+}
+.vfm--resize-tr[data-v-2836fdb5] {
+  top: -6px;
+  right: -6px;
+  cursor: nesw-resize;
+}
+.vfm--resize-r[data-v-2836fdb5] {
+  top: 0;
+  right: -6px;
+  width: 12px;
+  height: 100%;
+  cursor: ew-resize;
+}
+.vfm--resize-br[data-v-2836fdb5] {
+  bottom: -6px;
+  right: -6px;
+  cursor: nwse-resize;
+}
+.vfm--resize-b[data-v-2836fdb5] {
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  cursor: ns-resize;
+}
+.vfm--resize-bl[data-v-2836fdb5] {
+  bottom: -6px;
+  left: -6px;
+  cursor: nesw-resize;
+}
+.vfm--resize-l[data-v-2836fdb5] {
+  top: 0;
+  left: -6px;
+  width: 12px;
+  height: 100%;
+  cursor: ew-resize;
+}
+.vfm--resize-tl[data-v-2836fdb5] {
+  top: -6px;
+  left: -6px;
+  cursor: nwse-resize;
+}
+</style></head>
+
+<body class="page-wrap site-best-page page-wrap--dark-header" data-page="site-best" data-version="?v=112" data-env="prod" id="pageWrap">
+
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGR5959"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <div id="app" class="app">
+        
+<div class="header-dropdown">
+    <ul class="header-dropdown__unit" id="headerDropdownPassengers">
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//skyup.aero/uk/faq">
+                <span>Важливо та корисно</span>
+            </a>
+        </li>
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//skyup.aero/uk/news">
+                <span>Новини</span>
+            </a>
+        </li>
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//skyup.aero/uk/fleet">
+                <span>Наш флот</span>
+            </a>
+        </li>
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//skyup.aero/uk/our-directions">
+                <span>Наші напрямки</span>
+            </a>
+        </li>
+            </ul>
+    <ul class="header-dropdown__unit" id="headerDropdownProjects">
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//skyup.aero/uk/city-breaks">
+                <span>SkyUp CityBreaks</span>
+            </a>
+        </li>
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//skyup.aero/uk/weekend-for-u">
+                <span>SkyUp Weekend for U</span>
+            </a>
+        </li>
+        <li class="header-dropdown__item">
+            <a class="header-dropdown__link" href="//cargo.skyup.aero/uk/">
+                <span>SkyUp Cargo</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<header class="header header--dark" id="header">
+    <div class="header__unit header__left">
+        <div class="header__menu-btn-block header__menu-btn-block-tablet" id="openNavBtn">
+            <button type="button" class="header__menu-btn" aria-label="Відкрити головне меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <a class="header__logo-link header__item" href="//skyup.aero">
+            <svg class="icon icon-u-text">
+                <use xlink:href="/build/img/sprite.svg?v=112#icon-U-text"></use>
+            </svg>
+            <svg class="icon icon-logo-text">
+                <use xlink:href="/build/img/sprite.svg?v=112#icon-logo-text"></use>
+            </svg>
+                    </a>
+    </div>
+        <ul class="header__unit header__nav">
+        <li class="header__nav-item js-header-nav-item" data-page="site-my-ticket">
+                        <a href="//skyup.aero/uk/my-ticket" class="header__nav-link">
+                                    <div class="header__nav-title">Мої бронювання</div>
+                    <svg class="icon icon-active-menu">
+                        <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                    </svg>
+                </a>
+        </li>
+        <li class="header__nav-item js-header-nav-item">
+            <div class="header__nav-link header__nav-link--dropdown" id="headerTriggerDropdownPassengers">
+                <div class="header__nav-title">
+                    Пасажирам                    <svg class="icon icon-arrow-up"><use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-up"></use></svg>
+                </div>
+                <svg class="icon icon-active-menu">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                </svg>
+            </div>
+        </li>
+                        <li class="header__nav-item header__nav-item--desktop js-header-nav-item" data-page="site-map">
+            <a href="//skyup.aero/uk/routes-map" class="header__nav-link">
+                <div class="header__nav-title">Маршрути</div>
+                <svg class="icon icon-active-menu">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="header__nav-item js-header-nav-item header__nav-item--active" data-page="site-best">
+            <a href="//skyup.aero/uk/best" class="header__nav-link">
+                <div class="header__nav-title">
+                                        <span>Всі рейси</span>
+                </div>
+                <svg class="icon icon-active-menu">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="header__nav-item js-header-nav-item" data-page="career-career">
+            <a href="//skyup.aero/uk/career" class="header__nav-link">
+                <div class="header__nav-title">
+                    <span>Кар'єра</span>
+                </div>
+                <svg class="icon icon-active-menu">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="header__nav-item js-header-nav-item">
+            <div class="header__nav-link header__nav-link--dropdown" id="headerTriggerDropdownProjects">
+                <div class="header__nav-title">
+                    Проєкти                    <svg class="icon icon-arrow-up"><use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-up"></use></svg>
+                </div>
+                <svg class="icon icon-active-menu">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                </svg>
+            </div>
+        </li>
+        <li class="header__nav-item js-header-nav-item" data-page="site-contact">
+            <a href="//skyup.aero/uk/contact" class="header__nav-link">
+                <div class="header__nav-title">Контакти</div>
+                <svg class="icon icon-active-menu">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-active-menu"></use>
+                </svg>
+            </a>
+        </li>
+            </ul>
+
+    <div class="header__unit header__right" id="headerRight">
+                    <div class="header__theme">
+                                <button type="button" data-theme="dark" class="header__change-theme" id="headerChangeThemeDesc">
+                    <svg class="icon icon-sun">
+                        <use xlink:href="/build/img/sprite.svg?v=112#icon-sun"></use>
+                    </svg>
+                </button>
+                            </div>
+                <div class="header__lang" data-lang="uk" id="lang">
+            <button type="button" class="header__lang-open-list-btn " id="showLangsDesktop">
+                УКР            </button>
+                        <ul class="header__lang-list" id="headerLangListDesktop">
+                                                                                                                                                                                                <li class="header__lang-item">
+                            <button type="button" class="header__lang-btn js-hader-lang-btn" data-lang="en">ENG</button>
+                                                    </li>
+                                                </ul>
+        </div>
+
+                <div class="header__currency" data-currency="{&quot;code&quot;:&quot;UAH&quot;,&quot;symbol&quot;:&quot;₴&quot;,&quot;name&quot;:&quot;гривня&quot;}" data-payment-currency="{&quot;code&quot;:&quot;UAH&quot;,&quot;symbol&quot;:&quot;₴&quot;,&quot;name&quot;:&quot;гривня&quot;}" id="headerCurrency">
+            <button type="button" class="header__currency-open-list-btn" id="showCurrencyDesktop">
+                ₴            </button>
+            <ul class="header__currency-list" id="headerCurrencyListDesktop">                                                                             <li class="header__currency-item">
+                        <button type="button" class="header__lang-btn js-change-currency-btn" data-currency="EUR">€</button>
+                    </li>
+                                                        <li class="header__currency-item">
+                        <button type="button" class="header__lang-btn js-change-currency-btn" data-currency="USD">$</button>
+                    </li>
+                            </ul>
+        </div>
+
+        
+        <div class="header__user">
+                            <!-- Не залогинен -->
+                <button type="button" class="header__login" id="headerLogin">
+                    <svg class="icon icon-log-in"><use xlink:href="/build/img/sprite.svg?v=112#icon-log-in"></use></svg>
+                    Вхід                </button>
+            
+        </div>
+    </div>
+
+
+</header>
+        <div class="main-loader
+    " id="mainLoader">
+    <div class="main-loader__inner">
+        <span class="main-loader__text" id="mainLoaderText">Очікуйте</span>
+        <div class="main-loader__loader"></div>
+    </div>
+</div>
+        <!-- BEGIN nav  __________________________-->
+<nav class="nav nav--overlay-visible" id="nav">
+    <div class="nav__inner">
+        <div class="nav__top">
+            <button type="button" class="nav__close" id="closeNavBtn" aria-label="Закрити головне меню ">
+                <svg class="icon icon-arrow-left" aria-hidden="true">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-left"></use>
+                </svg>
+            </button>
+            <a class="nav__logo" href="//skyup.aero" rel="home" aria-label="Головна SkyUp Airlines">
+                <svg class="icon icon-logo-text" aria-hidden="true">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-logo-text"></use>
+                </svg>
+                            </a>
+        </div>
+        <div class="nav__lang-login">
+            <div class="nav__lang-currency">
+                                    <div class="nav__theme hidden">
+                                                <button type="button" data-theme="dark" class="nav__change-theme" id="headerChangeThemeMob">
+                            <svg class="icon icon-sun">
+                                <use xlink:href="/build/img/sprite.svg?v=112#icon-sun"></use>
+                            </svg>
+                        </button>
+                                            </div>
+                                <div class="nav__lang">
+                    <button type="button" class="nav__lang-open-list-btn " id="showLangsMobile">
+                        УКР                    </button>
+                    <ul class="nav__lang-list" id="navLangListMobile">
+                                                                                                                                                                                                                                                                        <li class="nav__lang-item">
+                                    <button type="button" class="nav__lang-btn js-hader-lang-btn" data-lang="en">ENG</button>
+                                                                    </li>
+                                                                        </ul>
+                </div>
+                <div class="nav__currency">
+                    <button type="button" class="nav__currency-open-list-btn" id="showCurrencyMobile">₴</button>
+                    <ul class="nav__currency-list" id="navCurrencyListMobile">
+                                                                                                            <li class="nav__currency-item">
+                                <button type="button" class="nav__currency-btn js-change-currency-btn" data-currency="EUR">€</button>
+                            </li>
+                                                                                <li class="nav__currency-item">
+                                <button type="button" class="nav__currency-btn js-change-currency-btn" data-currency="USD">$</button>
+                            </li>
+                                            </ul>
+                </div>
+            </div>
+            <div class="nav__login--block">
+                                    <!-- Не залогинен -->
+                    <button type="button" class="nav__login" id="navLogin">
+                        <svg class="icon icon-log-in">
+                            <use xlink:href="/build/img/sprite.svg?v=112#icon-log-in"></use>
+                        </svg>
+                        <p>Вхід</p>
+                    </button>
+                            </div>
+        </div>
+        <ul class="nav__list ps" id="navList">
+                        <li class="nav__unit js-nav-unit" data-page="site-my-ticket">
+                                    <a href="//skyup.aero/uk/my-ticket" class="nav__link">
+                                        <span class="nav__title">Мої бронювання</span>
+                    </a>
+            </li>
+            <li class="nav__unit js-nav-unit">
+                <button type="button" class="nav__link js-nav-btn-toggle-dropdown">
+                    <span class="nav__title">
+                        Пасажирам                        <svg class="icon icon-arrow-up"><use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-up"></use></svg>
+                    </span>
+                </button>
+                <ul class="nav__dropdown">
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//skyup.aero/uk/faq">
+                            <span class="nav__nav-item-title">Важливо та корисно</span>
+                        </a>
+                    </li>
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//skyup.aero/uk/news">
+                            <span class="nav__nav-item-title">Новини</span>
+                        </a>
+                    </li>
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//skyup.aero/uk/fleet">
+                            <span class="nav__nav-item-title">Наш флот</span>
+                        </a>
+                    </li>
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//skyup.aero/uk/our-directions">
+                            <span class="nav__nav-item-title">Наші напрямки</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+                        <li class="nav__unit js-nav-unit nav__unit--desktop" data-page="site-routes-map">
+                <a href="//skyup.aero/uk/routes-map" class="nav__link">
+                    <span class="nav__title">Маршрути</span>
+                </a>
+            </li>
+            <li class="nav__unit js-nav-unit nav__unit--active" data-page="site-best">
+                <a href="//skyup.aero/uk/best" class="nav__link">
+                    <span class="nav__title">
+                                                Всі рейси                    </span>
+                </a>
+            </li>
+            <li class="nav__unit js-nav-unit" data-page="career-career">
+                <a href="//skyup.aero/uk/career" class="nav__link">
+                    <span class="nav__title">Кар'єра</span>
+                </a>
+            </li>
+                        <li class="nav__unit js-nav-unit">
+                <button type="button" class="nav__link js-nav-btn-toggle-dropdown">
+                    <span class="nav__title">
+                        Проєкти                        <svg class="icon icon-arrow-up"><use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-up"></use></svg>
+                    </span>
+                </button>
+                <ul class="nav__dropdown">
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//skyup.aero/uk/city-breaks">
+                            <span class="nav__nav-item-title">SkyUp CityBreaks</span>
+                        </a>
+                    </li>
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//skyup.aero/uk/weekend-for-u">
+                            <span class="nav__nav-item-title">SkyUp Weekend for U</span>
+                        </a>
+                    </li>
+                    <li class="nav__nav-dropdown-item">
+                        <a href="//cargo.skyup.aero/uk/">
+                            <span class="nav__nav-item-title">SkyUp Cargo</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav__unit js-nav-unit" data-page="site-contact">
+                <a href="//skyup.aero/uk/contact" class="nav__link">
+                    <span class="nav__title">Контакти</span>
+                </a>
+            </li>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
+                <div class="nav__overlap"></div>
+    </div>
+</nav>
+<!-- END nav  __________________________-->
+        <div id="authoriz" class="modal authoriz js-modal">
+        <div class="modal__inner js-modal-inner">
+        <!-- AUTORIZATION -->
+        <div class="modal__close-margin modal__close-margin--top js-close-modal"></div>
+        <div class="authoriz__units">
+
+            <div class="authoriz__unit authoriz__unit--active js-authoriz-unit" id="authorizStart">
+                <button type="button" class="modal__close js-close-modal">
+                    <svg class="icon icon-close"><use xlink:href="/build/img/sprite.svg?v=112#icon-close"></use></svg>
+                </button>
+                <svg class="icon icon-logo-small authoriz__logo-img"><use xlink:href="/build/img/sprite.svg?v=112#icon-logo-small"></use></svg>
+                <h3 class="authoriz__subtitle">Профіль</h3>
+                <p class="authoriz__text-start">Увійдіть або створіть акаунт, використовуючи email.</p>
+                <div class="authoriz__btns">
+                    <button type="submit" class="btn-4 js-show-log-in">Увійти</button>
+                    <button type="button" class="btn-1 js-show-sign-in">Створити акаунт</button>
+                </div>
+                <p class="authoriz__text-start authoriz__text-start--center">або авторизуйтесь через:</p>
+                <div class="authoriz-clients">
+    <ul class="authoriz-clients__list">
+                    <li class="authoriz-clients__item authoriz-clients__item--facebook">
+                <a class="authoriz-clients__link" href="//skyup.aero/site/auth?authclient=facebook">
+                    <img class="authoriz-clients__img" src="/build/img/content/logo/facebook.svg?v=112" alt="facebook icon">
+                </a>
+            </li>
+                    <li class="authoriz-clients__item authoriz-clients__item--google">
+                <a class="authoriz-clients__link" href="//skyup.aero/site/auth?authclient=google">
+                    <img class="authoriz-clients__img" src="/build/img/content/logo/google.svg?v=112" alt="google icon">
+                </a>
+            </li>
+            </ul>
+</div>
+                            </div>
+
+            <form class="authoriz__unit js-authoriz-unit js-form" id="logInForm" novalidate="">
+                <button type="button" class="modal__close js-close-modal">
+                    <svg class="icon icon-close"><use xlink:href="/build/img/sprite.svg?v=112#icon-close"></use></svg>
+                </button>
+                <h2 class="modal__title authoriz__title" id="logInTitle">Авторизація</h2>
+                <div class="field">
+                    <label class="field__label">
+                        <span class="field__title">Email</span>
+                        <input type="email" name="email" autocomplete="email" id="logInEmail" class="field__input" required="" placeholder="..." data-parsley-maxlength="255" data-parsley-maxlength-message="Email повинен містити не більше 255 символів." data-parsley-type="email" data-parsley-type-message="Адреса електронної пошти заповнена некоректно.">
+                    </label>
+                </div>
+                <div class="field">
+                    <label class="field__label">
+                        <span class="field__title">Пароль</span>
+                        <input type="password" name="password" autocomplete="current-password" class="field__input" placeholder="..." required="" data-parsley-minlength="6" data-parsley-minlength-message="Пароль повинен містити не менше 6 символів." data-parsley-maxlength="100" data-parsley-maxlength-message="Пароль повинен містити не більше 100 символів.">
+                    </label>
+                </div>
+                <div class="authoriz__text-block">
+                    <span>Забули пароль?</span>
+                    <button type="button" class="authoriz__link-btn js-show-restore-acc">відновити пароль</button>
+                </div>
+                                <div class="authoriz__btns">
+                    <button type="submit" class="btn-4" id="logInBtn">Увійти</button>
+                    <button type="button" class="btn-1 js-show-sign-in">Створити акаунт</button>
+                </div>
+                <input type="hidden" name="_csrf-frontend" value="pulJfLgRW3t3OdsQ2jWiJXi6PkRJHn22c-mxkMZR0YDnrg8rjWg0PQ9trimdDJUSDdZ6HSFkDPVHn8TdtQuw0w==">
+            </form>
+
+            <form class="authoriz__unit js-authoriz-unit js-form" id="signInForm" novalidate="">
+                <button type="button" class="modal__close js-close-modal">
+                    <svg class="icon icon-close"><use xlink:href="/build/img/sprite.svg?v=112#icon-close"></use></svg>
+                </button>
+                <h2 class="modal__title authoriz__title" id="signInTitle">Реєстрація</h2>
+                <div class="field">
+                    <label class="field__label">
+                        <span class="field__title">Email</span>
+                        <input type="email" name="email" autocomplete="email" class="field__input" id="registrationEmail" required="" placeholder="..." data-parsley-maxlength="255" data-parsley-maxlength-message="Email повинен містити не більше 255 символів." data-parsley-type="email" data-parsley-type-message="Адреса електронної пошти заповнена некоректно.">
+                    </label>
+                </div>
+                <div class="field">
+                    <label class="field__label">
+                        <span class="field__title">Ім'я</span>
+                        <input type="text" name="name" autocomplete="username" class="field__input" required="" placeholder="..." data-parsley-minlength="2" data-parsley-minlength-message="Ім'я повинно містити не менше 2 символів." data-parsley-maxlength="100" data-parsley-maxlength-message="Ім'я повинно містити не більше 100 символів.">
+                    </label>
+                </div>
+                <div class="field">
+                    <label class="field__label">
+                        <span class="field__title">Пароль</span>
+                        <input type="password" name="password" autocomplete="new-password" class="field__input" id="signInPassword" placeholder="..." required="" data-parsley-minlength="6" data-parsley-minlength-message="Пароль повинен містити не менше 6 символів." data-parsley-maxlength="100" data-parsley-maxlength-message="Пароль повинен містити не більше 100 символів." data-parsley-equalto="#signInPasswordRepeat" data-parsley-equalto-message="Паролі не співпадають.">
+                    </label>
+                </div>
+                <div class="field authoriz__second-passw">
+                    <label class="field__label">
+                        <span class="field__title">Пароль ще раз</span>
+                        <input type="password" name="password_repeat" autocomplete="new-password" class="field__input" id="signInPasswordRepeat" placeholder="..." required="" data-parsley-minlength="6" data-parsley-minlength-message="Пароль повинен містити не менше 6 символів." data-parsley-maxlength="100" data-parsley-maxlength-message="Пароль повинен містити не більше 100 символів." data-parsley-equalto="#signInPassword" data-parsley-equalto-message="Паролі не співпадають.">
+                    </label>
+                </div>
+                <label class="checkbox checkbox--simple">
+                    <input type="checkbox" name="subscribe" value="1" class="checkbox__input" data-parsley-multiple="subscribe">
+                    <span class="checkbox__checkmark"></span>
+                    <span class="checkbox__text">Підписатися на розсилку</span>
+                </label>
+                                <p class="authoriz__error-text">Что то пошло не так… попробуйте еще раз</p>
+                <div class="authoriz__btns">
+                    <button type="submit" class="btn-4" id="createАccount">Створити</button>
+                    <button type="button" class="btn-1 js-show-log-in">Маєте акаунт?</button>
+                </div>
+                <input type="hidden" name="_csrf-frontend" value="pulJfLgRW3t3OdsQ2jWiJXi6PkRJHn22c-mxkMZR0YDnrg8rjWg0PQ9trimdDJUSDdZ6HSFkDPVHn8TdtQuw0w==">
+            </form>
+
+            <form class="authoriz__unit authoriz__unit--restore js-authoriz-unit js-form" id="restoreАccountForm" novalidate="">
+                <button type="button" class="modal__close js-close-modal">
+                    <svg class="icon icon-close"><use xlink:href="/build/img/sprite.svg?v=112#icon-close"></use></svg>
+                </button>
+                <h2 class="modal__title authoriz__title">Новий пароль</h2>
+                <p class="authoriz__text">На ваш email надійде посилання для відновлення пароля</p>
+                <div class="field" id="restoreAccoundEmailField">
+                    <label class="field__label">
+                        <span class="field__title">Email</span>
+                        <input type="email" name="email" autocomplete="email" class="field__input" placeholder="..." required="" data-parsley-maxlength="255" data-parsley-maxlength-message="Email повинен містити не більше 255 символів." data-parsley-type="email" data-parsley-type-message="Адреса електронної пошти заповнена некоректно.">
+                    </label>
+                </div>
+                <div class="authoriz__btns">
+                    <button type="submit" id="restoreАccountBtn" class="btn-4">Відправити пароль</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal__close-margin modal__close-margin--bottom js-close-modal"></div>
+    </div>
+
+</div>
+                <div id="informModal" class="modal inform-modal js-modal">
+    <div class="modal__inner js-modal-inner">
+        <div class="modal__close-margin modal__close-margin--top js-close-modal"></div>
+        <div class="modal__content js-modal-content">
+            <button type="button" class="modal__close js-close-modal">
+                <svg class="icon icon-close">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-close"></use>
+                </svg>
+            </button>
+
+            <h4 class="modal__title" id="informModalTitle"></h4>
+            <div class="inform-modal__text" id="informModalText" data-gtm-vis-polling-id-8614343_84="115"></div>
+            <button type="button" class="inform-modal__btn btn-4 js-close-modal" id="informModalbtn"></button>
+        </div>
+        <div class="modal__close-margin modal__close-margin--bottom js-close-modal"></div>
+    </div>
+</div>
+        
+
+        <!-- Microdata (path) --><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Thing","@id":"\/\/skyup.aero","name":"SkyUp Airlines"}},{"@type":"ListItem","position":2,"name":"авіарейс"}]}</script>
+<main class="main main--best" id="main">
+
+        <section class="best" id="best">
+        <div class="best__inner">
+
+            <div class="best__head" id="bestHead">
+
+                <div class="best__tabs tabber js-best-tabs">
+                    <div class="tabber__indicator js-tabber-indicator" style="transform: translateX(2px); width: 359px;"></div>
+                    <div class="tabber__list js-tabber-tabs" id="bestTabsList">
+                        <button class="tabber__item tabber__item--active" data-tab="best" type="button" tabindex="-1">
+                            <span class="tabber__title">Всі рейси</span>
+                        </button>
+                        <button class="tabber__item" data-tab="winter" type="button" tabindex="-1">
+                            <span class="tabber__title">Зимові рейси</span>
+                        </button>
+                        <button class="tabber__item" data-tab="summer" type="button" tabindex="-1">
+                            <span class="tabber__title">Літні рейси</span>
+                        </button>
+                                            </div>
+                </div>
+
+                <button class="best__btn best__btn--prev" id="bestHeadPrevBtn" disabled="">
+                    <svg class="icon icon-arrow-right-2"><use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-right-2"></use></svg>
+                </button>
+
+                <button class="best__btn best__btn--next" id="bestHeadNextBtn">
+                    <svg class="icon icon-arrow-right-2"><use xlink:href="/build/img/sprite.svg?v=112#icon-arrow-right-2"></use></svg>
+                </button>
+            </div>
+
+            
+            <div class="best__search" id="bestSearch">
+                <label class="searcher">
+                    <svg class="searcher__icon icon icon-search-2">
+                        <use xlink:href="/build/img/sprite.svg?v=112#icon-search-2"></use>
+                    </svg>
+                    <input class="searcher__input" id="bestSearchInput" type="search" placeholder="Пошук...">
+                </label>
+            </div>
+
+            
+<div class="best-card" id="cards">
+            <h1 class="visuallyhidden">Розклад рейсів</h1>
+    
+        <div class="best-card__inner">
+        <div class="best-card__units">
+                            <div class="best-card__unit js-best-unit" data-type="best summer">
+                    <p class="best-card__unit-title">Ізраїль</p>
+                    <div class="best-card__items">
+                                                                                                                                    <div data-type="best summer" data-search-options="Київ Тель-Авів Ізраїль" class="best-card__item  js-best-card
+                                                                ">
+
+                                <div class="best-card__img-overlay">
+                                                                        <div class="best-card__img lazyloaded" data-bg="https://skyup.aero/storage/img/best/TLV.jpg?v=112" style="background-image: url(&quot;https://skyup.aero/storage/img/best/TLV.jpg?v=112&quot;);"></div>
+                                </div>
+                                <div class="best-card__text">
+                                    <div class="best-card__badges">
+                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                    <a href="//skyup.aero/uk/results?departure_city=IEV&amp;arrival_city=TLV&amp;date_forward=2022-10-30&amp;adults=1&amp;children=0&amp;infants=0" class="best-card__line-first">
+                                        <p class="best-card__from-city">Київ</p>
+                                        <p class="best-card__shedule">Нд.</p>
+                                    </a>
+                                    <div class="best-card__line-second">
+                                        <p class="best-card__to-city">Тель-Авів</p>
+                                        <p class="best-card__price-current">
+                                                                                            від 4 988 ₴                                                                                    </p>
+                                                                            </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="best-card__unit js-best-unit" data-type="best summer">
+                    <p class="best-card__unit-title">ОАЕ</p>
+                    <div class="best-card__items">
+                                                                                                                                    <div data-type="best summer" data-search-options="Київ Дубай ОАЕ" class="best-card__item  js-best-card
+                                                                ">
+
+                                <div class="best-card__img-overlay">
+                                                                        <div class="best-card__img lazyloaded" data-bg="https://skyup.aero/storage/img/best/DXB.jpg?v=112" style="background-image: url(&quot;https://skyup.aero/storage/img/best/DXB.jpg?v=112&quot;);"></div>
+                                </div>
+                                <div class="best-card__text">
+                                    <div class="best-card__badges">
+                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                    <a href="//skyup.aero/uk/results?departure_city=IEV&amp;arrival_city=DXB&amp;date_forward=2022-10-30&amp;adults=1&amp;children=0&amp;infants=0" class="best-card__line-first">
+                                        <p class="best-card__from-city">Київ</p>
+                                        <p class="best-card__shedule">Нд.</p>
+                                    </a>
+                                    <div class="best-card__line-second">
+                                        <p class="best-card__to-city">Дубай</p>
+                                        <p class="best-card__price-current">
+                                                                                            від 4 165 ₴                                                                                    </p>
+                                                                            </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="best-card__unit js-best-unit" data-type="best summer winter" hidden="">
+                    <p class="best-card__unit-title">Україна</p>
+                    <div class="best-card__items">
+                                                                    </div>
+                </div>
+                            <div class="best-card__unit js-best-unit" data-type="best winter">
+                    <p class="best-card__unit-title">Греція</p>
+                    <div class="best-card__items">
+                                                                                                                                    <div data-type="best winter" data-search-options="Київ Афіни Греція" class="best-card__item  js-best-card
+                                                                ">
+
+                                <div class="best-card__img-overlay">
+                                                                        <div class="best-card__img lazyload" data-bg="https://skyup.aero/storage/img/best/ATH.jpg?v=112"></div>
+                                </div>
+                                <div class="best-card__text">
+                                    <div class="best-card__badges">
+                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                    <a href="//skyup.aero/uk/results?departure_city=IEV&amp;arrival_city=ATH&amp;date_forward=2022-10-31&amp;adults=1&amp;children=0&amp;infants=0" class="best-card__line-first">
+                                        <p class="best-card__from-city">Київ</p>
+                                        <p class="best-card__shedule">Пн, Пт.</p>
+                                    </a>
+                                    <div class="best-card__line-second">
+                                        <p class="best-card__to-city">Афіни</p>
+                                        <p class="best-card__price-current">
+                                                                                            від 1 141 ₴                                                                                    </p>
+                                                                            </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="best-card__unit js-best-unit" data-type="best winter">
+                    <p class="best-card__unit-title">Туреччина</p>
+                    <div class="best-card__items">
+                                                                                                                                    <div data-type="best winter" data-search-options="Київ Стамбул Туреччина" class="best-card__item  js-best-card
+                                                                ">
+
+                                <div class="best-card__img-overlay">
+                                                                        <div class="best-card__img lazyloaded" data-bg="https://skyup.aero/storage/img/best/IST.jpg?v=112" style="background-image: url(&quot;https://skyup.aero/storage/img/best/IST.jpg?v=112&quot;);"></div>
+                                </div>
+                                <div class="best-card__text">
+                                    <div class="best-card__badges">
+                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                    <a href="//skyup.aero/uk/results?departure_city=IEV&amp;arrival_city=IST&amp;date_forward=2022-10-31&amp;adults=1&amp;children=0&amp;infants=0" class="best-card__line-first">
+                                        <p class="best-card__from-city">Київ</p>
+                                        <p class="best-card__shedule">Пн, Ср, Пт.</p>
+                                    </a>
+                                    <div class="best-card__line-second">
+                                        <p class="best-card__to-city">Стамбул</p>
+                                        <p class="best-card__price-current">
+                                                                                            від 1 931 ₴                                                                                    </p>
+                                                                            </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            
+                                        
+        </div>
+    </div>
+
+    </div>
+
+            <p class="best__error" id="bestNoResults" hidden="">Немає результатів пошуку</p>
+        </div>
+    </section>
+</main>
+        <footer class="footer" id="footer">
+    <div class="footer__mobile-logo-social" id="footerMobileMenuToggle">
+        <a class="footer__logo-link" aria-label="На головну" href="//skyup.aero">
+            <svg class="icon icon-logo-text">
+                <use xlink:href="/build/img/sprite.svg?v=112#icon-logo-text"></use>
+            </svg>
+        </a>
+        <div class="footer__social">
+            <a href="https://www.facebook.com/skyup.aero/" target="_blank" aria-label="Facebook" rel="noopener noreferrer" class="footer__social-item">
+                <svg class="icon icon-facebook" aria-hidden="true">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-facebook"></use>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/skyup.aero/" target="_blank" aria-label="Instagram" rel="noopener noreferrer" class="footer__social-item">
+                <svg class="icon icon-instagram" aria-hidden="true">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-instagram"></use>
+                </svg>
+            </a>
+            <a href="https://invite.viber.com/?g2=AQBRqHUyeOjXrk2EIACkNnMCYvtkY42uh0R1vTzqUKgwD%2FV679s5gA9OZILA2sa9" target="_blank" aria-label="Viber" rel="noopener noreferrer" class="footer__social-item">
+                <img src="/build/img/content/logo/viber.svg?v=112" alt="viber">
+            </a>
+            <a href="https://t.me/SkyUpAirlines" target="_blank" aria-label="Telegram" rel="noopener noreferrer" class="footer__social-item">
+                <img src="/build/img/content/logo/telegram.svg?v=112" alt="telegram">
+            </a>
+        </div>
+    </div>
+    <div class="footer__main">
+        <div class="footer__contacts-logo-unit">
+            <a class="footer__logo-link" href="//skyup.aero" aria-label="На головну">
+                <svg class="icon icon-logo-text">
+                    <use xlink:href="/build/img/sprite.svg?v=112#icon-logo-text"></use>
+                </svg>
+            </a>
+            <div class="footer__social">
+                <a href="https://www.facebook.com/skyup.aero/" target="_blank" aria-label="Facebook" rel="noopener noreferrer" class="footer__social-item">
+                   <svg class="icon icon-facebook" aria-hidden="true">
+                       <use xlink:href="/build/img/sprite.svg?v=112#icon-facebook"></use>
+                   </svg>
+                </a>
+                <a href="https://www.instagram.com/skyup.aero/" target="_blank" aria-label="Instagram" rel="noopener noreferrer" class="footer__social-item">
+                   <svg class="icon icon-instagram" aria-hidden="true">
+                       <use xlink:href="/build/img/sprite.svg?v=112#icon-instagram"></use>
+                   </svg>
+                </a>
+                <a href="https://invite.viber.com/?g2=AQBRqHUyeOjXrk2EIACkNnMCYvtkY42uh0R1vTzqUKgwD%2FV679s5gA9OZILA2sa9" target="_blank" aria-label="Viber" rel="noopener noreferrer" class="footer__social-item">
+                    <img src="/build/img/content/logo/viber.svg?v=112" alt="viber">
+                </a>
+                <a href="https://t.me/SkyUpAirlines" target="_blank" aria-label="Telegram" rel="noopener noreferrer" class="footer__social-item">
+                    <img src="/build/img/content/logo/telegram.svg?v=112" alt="telegram">
+                </a>
+            </div>
+            <div class="footer__unit footer__contacts-unit js-footer-unit">
+                <h3 class="footer__unit-title js-footer-unit-title">Контакти</h3>
+                <ul class="footer__contacts-list">
+                    <li>
+                        <a class="footer__phone" href="tel:+380800303113">
+                            <span>0 800 </span>
+                            <span>30-31-13</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__phone" href="tel:+380443300013">
+                            <span>+38 (044) </span>
+                            <span>330-00-13</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__phone" href="tel:+380443399003">
+                            <span>+38 (044) </span>
+                            <span>339-90-03</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__email" href="mailto:info@skyup.aero">
+                            <span>info</span>
+                            <span>@skyup.aero</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- TODO: адресс тег сделать семантично -->
+                        <a href="https://www.google.com.ua/maps/search/%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5+%D0%A8%D0%BE%D1%81%D1%81%D0%B5,++201%2F203-2%D0%B0/@50.4037168,30.6827011,18.23z?hl=uk" rel="noopener noreferrer" target="_blank">
+                            02121, Україна, м. Київ <br> Харківське шосе, 201 / 203-2а                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__unit footer__navigation-unit js-footer-unit">
+            <h3 class="footer__unit-title js-footer-unit-title">Навігація</h3>
+            <ul class="footer__pages">
+                <li><a href="//skyup.aero/uk/best" class="footer__pages-link">Всі рейси</a></li>
+                                <li><a href="//skyup.aero/uk/board" class="footer__pages-link">Онлайн-табло</a></li>
+                <li><a href="//skyup.aero/uk/my-ticket" class="footer__pages-link">Мій квиток</a></li>
+            </ul>
+        </div>
+        <div class="footer__unit footer__info-unit js-footer-unit">
+            <h3 class="footer__unit-title js-footer-unit-title">Пасажирам</h3>
+            <ul class="footer__pages">
+                <li><a href="//skyup.aero/uk/rules" class="footer__pages-link">Правила повітряних перевезень та поведінки на борту</a></li>
+                <li><a href="//skyup.aero/uk/cookie-policy" class="footer__pages-link">Управління cookie-файлами</a></li>
+                <li><a href="//skyup.aero/uk/privacy-policy" class="footer__pages-link">Політика конфіденційності</a></li>
+                <li><a href="//skyup.aero/uk/terms-and-conditions" class="footer__pages-link">Правила та умови</a></li>
+            </ul>
+        </div>
+        <div class="footer__subscribe-unit">
+            <h3 class="footer__unit-title">Підписка</h3>
+            <p class="footer__quot">Підпишіться і дізнавайтеся першими про наші найкращі пропозиції</p>
+            <form id="footerSubscribeForm" class="footer__form js-form" novalidate="">
+                <input type="hidden" name="_csrf-frontend" value="pulJfLgRW3t3OdsQ2jWiJXi6PkRJHn22c-mxkMZR0YDnrg8rjWg0PQ9trimdDJUSDdZ6HSFkDPVHn8TdtQuw0w==">
+                <div class="field footer__subscribe-label">
+                    <label class="field__label">
+                        <span class="field__title">Email</span>
+                        <input type="email" name="email" class="field__input" placeholder="..." required="" data-parsley-maxlength="255" data-parsley-maxlength-message="Email повинен містити не більше 255 символів." data-parsley-type="email" data-parsley-type-message="Адреса електронної пошти заповнена некоректно.">
+                    </label>
+                </div>
+                <button type="submit" class="btn-4 footer__btn" aria-label="Надіслати">
+                    <svg class="icon icon-send-plane" aria-hidden="true"><use xlink:href="/build/img/sprite.svg?v=112#icon-send-plane"></use></svg>
+                </button>
+            </form>
+        </div>
+        <div class="footer__legal-info">
+            <div class="footer__legal-info--item">
+                <p class="footer__legal-info--text">
+                    <span class="footer__legal-info--name">SkyUp Airlines Limited Liability Company</span><br>
+                    a company duly incorporated and existing under the laws of Ukraine, 
+                    under registration No. 41403314, having its registered office at 
+                    201-203 2A Kharkivske Highway, Kyiv, 02121, Ukraine
+                </p>
+            </div>
+            <div class="footer__legal-info--item">
+                <p class="footer__legal-info--text">
+                    <span class="footer__legal-info--name">ALIMPIKA AVIATION LTD</span><br>
+                    a company incorporated and registered in the Republic of Cyprus, 
+                    under registration No. HE 401226, having its registered office at:
+                    info@alimpikaaviation.com.cy, Ilektras 19, Office/Flat 102, Kokkinotrimithia, 2660, Nicosia, Cyprus
+                </p>
+            </div>
+        </div>
+        <div class="footer__secondary--payment-logo footer__payment-logo--mobile">
+            <img class="footer__payment-logo" src="/build/img/content/mastercard_footer-logo.png">
+            <img class="footer__payment-logo" src="/build/img/content/visa_footer-logo.png">
+        </div>
+    </div>
+    <div class="footer__secondary">
+        <div class="footer__copyright">© 2022 SkyUp Всі права захищені</div>
+        <div class="footer__secondary--payment-logo footer__payment-logo--desktop">
+            <img class="footer__payment-logo" src="/build/img/content/mastercard_footer-logo.png">
+            <img class="footer__payment-logo" src="/build/img/content/visa_footer-logo.png">
+        </div>
+    </div>
+</footer>
+                <div id="vue-modal-containers" data-v-app=""><div class="modals-container"></div></div>
+    </div><script type="text/javascript" id="" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>window.lintrk('track', { conversion_id: 7711226 });
+<script type="text/javascript" id="">$(".btn-4.catering__btn.js-catering-cart-goto-ticket").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(3)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"catering"}):dataLayer.push({event:"autoEvent",eventCategory:"Seacrh Additional Services",
+eventAction:"catering"}))});
+$(".btn-1.baggage__save-btn.js-close-modal").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(4)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"baggage"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"baggage"}))});
+$(".btn-4.seatsel-form__btn.js-seatsel-form-goto-ticket").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(2)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"seat"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",
+eventAction:"seat"}))});
+$("#animalModal \x3e div \x3e div.modal__content.animal__content \x3e button.modal__close.js-close-modal").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(5)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"pets"}):dataLayer.push({event:"autoEvent",
+eventCategory:"Search Additional Services",eventAction:"pets"}))});
+$("#insurancePromoModalSelectBtn").click(function(){$("#insuranceModal \x3e div \x3e div.modal__content \x3e button.modal__close.js-close-modal").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(6)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",
+eventAction:"insurance",eventLabel:"pop-up"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"insurance",eventLabel:"pop-up"}))})});
+$("#insuranceModal \x3e div \x3e div.modal__content \x3e button.modal__close.js-close-modal").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(6)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"insurance",eventLabel:"button"}):
+dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"insurance",eventLabel:"button"}))});
+$("#medicalTestingModal \x3e div.modal__inner.medical-testing__inner.js-modal-inner \x3e div.modal__close-margin.modal__close-margin--top.js-close-modal").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(7)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",
+eventAction:"medical-testing"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"medical-testing"}))});
+$("#surprizeModal \x3e div.modal__inner.js-modal-inner \x3e div.modal__close-margin.modal__close-margin--top.js-close-modal").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(8)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"surprize"}):
+dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"surprize"}))});
+$("#happyPawForm \x3e button.btn-1.happy-paw__btn").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(9)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"happyPaw"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",
+eventAction:"happyPaw"}))});
+$(".btn-4.highpass__btn.js-highpass-goto-ticket").click(function(){"passenger-service js-passenger-service passenger-service--selected"==document.querySelector("#passengersForm \x3e div.passenger.passenger--adl.js-passenger \x3e div.passenger__services \x3e div:nth-child(10)").className&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"highpass"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"highpass"}))});
+$(".btn-4.gift-cert__btn.js-gift-cert-next-step").click(function(){document.getElementById("giftCertTermsCheckbox").checked&&(window.location.pathname.includes("city-break")?dataLayer.push({event:"autoEvent",eventCategory:"Pack Additional Services",eventAction:"gift"}):dataLayer.push({event:"autoEvent",eventCategory:"Search Additional Services",eventAction:"gift"}))});</script>
+
+<script>
+    window.jsTr = {
+	// ПРОВЕРЕННЫЕ ПЕРЕВОДЫ START
+	// refunding
+	"Вы уже оформили промокод.": "Ви вже оформили промокод.",
+	"Промокод оформлен": "Промокод оформлено",
+	"Ваша ссылка устарела.": "Ваше посилання застаріло.",
+	"Проверьте правильность введенных данных.": "Перевірте правильність введених даних.",
+	"Вы оформили промокод.": "Ви оформили промокод.",
+	// общее
+	"Чартер": "Чартер",
+	"Ожидайте": "Зачекайте",
+	"Продолжить": "Продовжити",
+	"Ошибка": "Помилка",
+	"Не спешите": "Не поспішайте",
+	"Выбрать": "Вибрати",
+	"Спасибо": "Дякуємо",
+	"Выбрано": "Вибрано",
+
+	"шт": "шт",
+	"Багаж": "Багаж",
+	"Cпорт. снаряж.": "Cпорт. спорядж.",
+	"Место": "Місце",
+	"К сожалению, сервер временно недоступен.<br> Попробуйте повторить действие чуть позже.": "На жаль, сервер тимчасово недоступний.<br> Спробуйте повторити дію трохи пізніше.",
+	"По этому направлению билеты можно приобрести только туда-обратно (round trip) и на определенные даты.": "За цим напрямком квитки можна придбати тільки туди-назад (round trip) і на певні дати.",
+	"Даты вылета вы можете выбрать в календаре при поиске рейса.": "Дати вильоту ви можете вибрати в календарі під час пошуку рейсу.",
+	"В форме содержатся ошибки": "Форма містить помилки",
+	"Повторите отправку еще раз": "Повторіть відправку ще раз",
+	"Закрыть": "Закрити",
+	"Туда": "Туди",
+	"Обратно": "Назад",
+	"Внимание!": "Увага!",
+	"Срок действия вашего паспорта может быть недостаточным для прохождения контроля в аэропорту прибытия. Компетентные органы могут отказать вам во въезде в страну назначения. <br> Убедитесь, что срок указанного паспорта достаточен для въезда в страну назначения или вовремя примите меры для его продления.": "Строк дії вашого паспорту може бути недостатній для проходження контролю в аеропорту прибуття. Компетентні органи можуть відмовити вам у в’їзді в країну призначення. <br> Переконайтеся, що строк вказаного паспорту достатній для в’їзду в країну призначення, або вчасно вжийте заходів для його подовження.",
+	"Уважаемый пассажир!": "Шановний пасажире!",
+	"Неизвестная ошибка": "Невідома помилка",
+	"Пожалуйста, обновите страницу и попробуйте заново.": "Будь ласка, оновіть сторінку і спробуйте занову.",
+	"Багаж 23 кг за": "Багаж 23 кг за",
+	"*1 единица багажа весом до 23 кг.<br>Акционная стоимость": "* 1 одиниця багажу вагою до 23 кг.<br>Акційна вартість",
+	"только для первого оплачиваемого багажа.<br>Оплата за все последующие дополнительные единицы согласно — стандартной тарификации.": "тільки для першого оплачуваного багажу.<br>Оплата за всі наступні додаткові одиниці — згідно зі стандартною тарифікацією.",
+	"Закончите регистрацию на рейс и оплатите выбранные дополнительные услуги, после этого можете вернуться к выбору места.": "Закінчіть реєстрацію на рейс і оплатіть вибрані додаткові послуги, після цього можете повернутися до вибору місця.",
+	"Закончите выбор места на борту и оплатите выбранные дополнительные услуги, после этого можете вернуться к регистрации на рейс.": "Закінчіть вибір місця на борту і оплатіть вибрані додаткові послуги, після цього можете повернутися до реєстрації на рейс.",
+	"Подробно": "Докладно",
+	"Свернуть": "Згорнути",
+	"Недоступно": "Недоступно",
+	"см": "см",
+	"В настоящее время проводится доработка функционала. <br> Скоро возвраты снова станут доступны.": "Зараз час проводиться доопрацювання функціоналу. <br> Незабаром повернення коштів знову стане доступним.",
+	"Неверный email или пароль. Пожалуйста, проверьте правильность введённых данных и повторите попытку.": "Невірна адреса електронної пошти або пароль. Будь ласка, перевірте та виправте дані та повторіть спробу.",
+	"Невалидный email. Проверьте правильность введенного адреса и повторите попытку.": "Невалідний email. Перевірте правильність введеногї адреси і спробуйте ще раз.",
+	"К сожалению, все попытки ввода неверных данных исчерпаны. Пожалуйста, продолжите действие через 5 минут.": "На жаль, всі спроби введення невірнихх даних вичерпано. Будь ласка, продовжіть дію за 5 хвилин.",
+	"Ошибка валидации. Попробуйте обновить страницу и повторить действие.": "Помилка валідації. Спробуйте оновити сторінку і повторити дію.",
+	"Этот email уже подтвержден.": "Цей email вже підтверджено.",
+	"Пользователь не найден.": "Користувача не знайдено.",
+	"Неверный пароль.": "Невірний пароль.",
+	"Статус пользователя некорректный.": "Статус користувача некоректний.",
+	"Пользователь неактивен.": "Користувач неактивний.",
+	"Пожалуйста, исправьте ошибку": "Будь ласка, виправте помилку",
+	"любое (номер места появится после завершения регистрации)": "будь-яке (номер місця з'явиться після завершення реєстрації)",
+	"Активирован": "Aктивовано",
+	"Активировать": "Активувати",
+	"Сюрприз от": "Сюрприз від",
+	"Авторизоваться": "Авторизуватися",
+	"Чтобы выбрать данную услугу, пожалуйста, авторизуйтесь или зарегистрируйтесь на сайте.": "Щоб вибрати цю послугу, будь ласка, авторизуйтесь або зареєструйтесь на сайті.",
+	"Поздравляем": "Вітаємо",
+	"Ваучер успешно активирован.": "Ваучер успішно активовано.",
+	"Ваучер не найден.": "Ваучер не знайдено",
+	"Ваучер уже активирован.": "Ваучер вже активовано.",
+	"Авторизуйтесь на сайте и повторите активацию ваучера снова": "Авторизуйтесь на сайті та повторіть активацію ваучера знову",
+	"Заполните поле ваучера": "Заповніть поле ваучера",
+	"Данный ваучер уже активирован": "Цей ваучер вже активовано",
+	// total.js
+	"Эта акция уже закончилась или ещё не началась": "Ця акція вже закінчилася або ще не почалася",
+	"К сожалению, данный промокод для этого рейса не подходит": "На жаль, цей промокод для цього рейсу не підходить",
+	"Промокод не найден": "Промокод не знайдено",
+	"Дополнительные услуги": "Додаткові послуги",
+	"Услуги": "Послуги",
+	"Трансфер": "Трансфер",
+	"Оплатить": "Оплатити",
+	"К сожалению, платежные системы временно недоступны.<br> Попробуйте повторить бронирование чуть позже.": "На жаль, платіжні системи тимчасово недоступні.<br>Спробуйте повторити бронювання трохи пізніше.",
+	"по": "по", // оставим пустым, так как на англ так не говорят
+	"Банк не предоставил вам возможность оплаты частями.<br> Попробуйте полную оплату.": "Банк не надав вам можливості оплати частинами. <br> Спробуйте повну оплату.",
+	"Банк не нашел пользователя. <br> Попробуйте полную оплату.": "Банк не знайшов користувача. <br> Спробуйте повну оплату.",
+	// datepicker.js
+	"Обратный билет не нужен": "Зворотний квиток не потрібен",
+	"Нет рейсов по этому направлению": "Немає рейсів за цим напрямком",
+	"за одного взрослого": "за одного дорослого",
+	"Цены указаны за одного взрослого.": "Ціни вказані за одного дорослого.",
+	"При выборе другого количества пассажиров цены могут отличаться.": "При виборі іншої кількості пасажирів ціни можуть відрізнятись.",
+	// footer Подписка на рассылку
+	"Подписка оформлена": "Підписка оформлена",
+	"Вы уже подписаны на нашу рассылку :)": "Ви вже підписані на нашу розсилку :)",
+	"Также сообщаем, что вы уже были подписаны на нашу рассылку :)": "Також повідомляємо, що ви вже підписані на нашу розсилку :)",
+	"Спасибо за подписку. <br>Обещаем не спамить и присылать только информацию о лучших предложениях.": "Дякуємо за підписку. <br>Обіцяємо не спамити і надсилати тільки інформацію про найкращі пропозиції.",
+	"Отлично!": "Чудово!",
+	"Вы успешно подписались на e-mail рассылку от SkyUp Airlines.": "Ви успішно підписалися на email-розсилку від SkyUp Airlines.",
+	"Спасибо, что вы с нами :)": "Дякуємо, що ви з нами :)",
+	"Отписка": "Відписка",
+	"Теперь вы отписаны от нашей рассылки.": "Тепер ви відписані від нашої розсилки.",
+	// resetPassword.js
+	"Пароль изменен": "Пароль змінено",
+	"Пожалуйста, авторизуйтесь после перехода на главную страницу.": "Будь ласка, авторизуйтесь після переходу на головну сторінку.",
+	"На главную": "На головну",
+	// toursist.js
+	"Эта возможность будет доступна после оплаты билета через страницу <strong>Управление бронированием</strong> или <strong>Мой билет.</strong>": "Ця можливість буде доступна після оплати квитка через сторінку <strong>Керування бронюванням</strong> або <strong>Мій квиток.</strong>",
+	"Этот сервис сейчас недоступен, попробуйте ближе к дате вылета.": "Цей сервіс зараз недоступний, спробуйте ближче до дати вильоту.",
+	"Чтобы управлять билетом, пожалуйста, авторизуйтесь или зарегистрируйтесь на сайте.": "Щоб керувати квитком, будь ласка, авторизуйтесь або зареєструйтесь на сайті.",
+	"К сожалению, эта услуга недоступна для младенцев.": "На жаль, ця послуга недоступна для немовлят.",
+	"Вы уже приобрели эту услугу.<br>Изменение в данный момент невозможно.": "Ви вже придбали цю послугу. <br>Внести зміни зараз неможливо.",
+	"Упс": "Упс",
+	"Для вашего рейса эта услуга временно недоступна.": "Для вашого рейсу ця послуга тимчасово недоступна.",
+	"Выбор этой услуги на ваш рейс больше недоступен онлайн.<br>Докупить эту услугу можно в аэропорту.": "Вибір цієї послуги на ваш рейс більше недоступний онлайн.<br>Докупити цю послугу можна в аеропорту.",
+	"К сожалению, эта услуга полностью распродана :(": "На жаль, ця послуга повністю розпродана :(",
+	"Для младенца не предусмотрен выбор отдельного места для трансфера.<br>Пожалуйста, выберите трансфер для взрослого, с которым он путешествует.": "Для немовляти не передбачено вибір окремого місця для трансферу.<br>Будь ласка, виберіть трансфер для дорослого, з яким дитина подорожує.",
+	"Выбор этой услуги на ваш рейс больше недоступен.": "Вибір цієї послуги на ваш рейс більше недоступний.",
+	"Выбор этой услуги на ваш рейс недоступен.": "Вибір цієї послуги на ваш рейс недоступний.",
+	"Услуга недоступна": "Послуга недоступна",
+	"Предзаказ питания на этот рейс недоступен.": "Передзамовлення харчування на цей рейс недоступне.",
+	"Регистрация на рейс": "Реєстрація на рейс",
+	"Вы начали регистрацию на рейс с выбором места.<br> Если хотите использовать регистрацию без выбора места (бесплатно), закончите текущую регистрацию или перезагрузите страницу.": "Ви почали реєстрацію на рейс з вибором місця. <br> Якщо хочете зареєструватися без вибору місця (безкоштовно), закінчіть поточну реєстрацію або перезавантажте сторінку.",
+	"Вы начали регистрацию на рейс без выбора места.<br> Если хотите использовать регистрацию с выбором места, закончите текущую регистрацию или перезагрузите страницу.": "Ви почали реєстрацію на рейс без вибору місця. <br> Якщо хочете зареєструватися з вибором місця, закінчіть поточну реєстрацію або перезавантажте сторінку.",
+
+	// profileSettings.js
+	"Данные сохранены": "Дані збережені",
+	"Ваши новые данные успешно сохранены.": "Ваші нові дані успішно збережені.",
+	// authoriz.js
+	"Все готово <br><br> Мы отправили вам email, чтобы подтвердить регистрацию, перейдите по ссылке в письме.": "Все готово <br><br> Ми відправили вам email, щоб підтвердити реєстрацію, перейдіть за посиланням у листі.",
+	"Извините, нам не удалось подписать вас на нашу рассылку.<br>Попробуйте еще раз с помощью формы подписки внизу страницы": "Вибачте, нам не вдалося підписати вас на нашу розсилку.<br>Спробуйте ще раз за допомогою форми підписки внизу сторінки",
+	"Контакты": "Контакти",
+	"Мы также отправили вам письмо с подтверждением на рассылку.<br>Пожалуйста, откройте его и подтвердите подписку.": "Ми також відправили вам листа з підтвердженням на розсилку.<br>Будь ласка, відкрийте його і підтвердіть підписку.",
+	"Подтверждение": "Підтвердження",
+	"Мы пишем письмо": "Ми пишемо лист",
+	"Cсылка отправлена": "Посилання відправлено",
+	"Ссылка с дальнейшими инструкциями отправлена на email.": "Посилання з подальшими інструкціями відправлено на email.",
+	"Аккаунт не активирован. Перейдите по ссылке, которую мы отправили вам на почту, для подтверждения создания аккаунта.": "Акаунт не активований. Перейдіть за посиланням, яке ми відправили вам на пошту, щоб підтвердити створення аккаунта.",
+	"Такой email не существует.<br>Внимательно проверьте введенные данные.": "Такий email не існує.<br>Уважно перевірте введені дані.",
+	"К сожалению, срок действия вашей ссылки для восстановления пароля уже истек.": "На жаль, термін дії вашого посилання для відновлення пароля вже минув.",
+	"Введите свою почту в форме восстановления пароля и перейдите по новой ссылке, которая придет на вашу почту.": "Введіть свою пошту в формі відновлення пароля і перейдіть за новим посиланням, яке прийде на вашу пошту.",
+	"Эта ссылка для восстановления пароля уже недействительна.": "Це посилання для відновлення пароля вже недійсне.",
+	"Пожалуйста, используйте ссылку из последнего письма.": "Будь ласка, скористайтеся посиланням з останнього листа.",
+	"По вашей просьбе аккаунт, зарегистрированный на этот email, был удален.": "Якщо ви бажаєте відновити його, будь ласка, напишіть нам на",
+	"Если вы хотите восстановить его, пожалуйста, напишите нам на": "Если вы хотите восстановить его, пожалуйста, напишите нам на",
+	"или позвоните по телефону": "або зателефонуйте",
+	// payment-result
+	"Неизвестный статус оплаты": "Невідомий статус оплати",
+	"Попробуйте обновить страницу. Если ошибка повторится - обратитесь в нашу службу клиентской поддержки.": "Спробуйте оновити сторінку. Якщо помилка повториться - зверніться в нашу службу клієнтської підтримки.",
+	// dates.js flights.js
+	"от": "від",
+	"Рейс не выбран": "Рейс не вибрано",
+	// passengModal.js
+	"взр": "дор",
+	"взросл": "доросл",
+	"мла": "нем",
+	"млад": "немов",
+	"реб": "дит",
+	"дет": "діт",
+	"Цена указана за": "Ціна вказана за",
+	"Скрыть поиск": "Приховати пошук",
+	// flightNotSelectedModal
+	"Пожалуйста, выберите рейс": "Будь ласка, виберіть рейс",
+	"Пожалуйста, выберите рейсы для перелета ТУДА и ОБРАТНО": "Будь ласка, виберіть рейси для перельоту ТУДИ і НАЗАД",
+	"Пожалуйста, выберите рейс для перелета ТУДА": "Будь ласка, виберіть рейс для перельоту ТУДИ",
+	"Пожалуйста, выберите рейс для перелета ОБРАТНО": "Будь ласка, виберіть рейс для перельоту НАЗАД",
+	"Сначала выберите <strong>дату вылета туда</strong>": "Cпочатку виберіть <strong>дату вильоту туди</strong>",
+	// ticket.js
+	"Результаты поиска устарели": "Результати пошуку застаріли",
+	"Обновите страницу, чтобы получить актуальные цены.": "Оновіть сторінку, щоб отримати актуальні ціни.",
+	"Обновить страницу": "Оновити сторінку",
+	"Выберите дату обратного перелета": "Виберіть дату зворотного перельоту",
+	"По этому направлению возможна покупка билетов только в обе стороны.": "За цим напрямком можлива покупка квитків тільки в обидві сторони.",
+	"Но места(о) на борту, которые вы выбрали": "Але місця(е) на борту, які ви вибрали",
+	"для перелета": "для перельоту",
+	"были куплены минуту назад другим пассажиром. <br>Пожалуйста, выберите места(о) заново.": "були куплені хвилину тому іншим пасажиром. <br>Будь ласка, виберіть місця(е) заново.",
+	"Бронирование невозможно": "Бронювання неможливе",
+
+	//blacklist modal
+	"В вашем бронировании есть пассажиры, внесенные в список нежелательных пассажиров авиакомпании SkyUp:": "У вашому бронюванні є пасажири, внесені до списку небажаних пасажирів авіакомпанії SkyUp:",
+	"К сожалению, мы не можем создать бронирование для таких пассажиров. Пожалуйста, удалите их данные, чтобы продолжить.": "На жаль, ми не можемо створити бронювання для таких пасажирів. Будь ласка, видаліть їхні дані, щоб продовжити.",
+	//blacklist modal end
+
+	"Произошла ошибка. Обновите страницу и попробуйте забронировать еще раз.": "Виникла помилка. Оновіть сторінку і спробуйте забронювати ще раз.",
+	"Бронирование прошло успешно.": "Бронювання пройшло успішно.",
+	"Регистрация на рейс недоступна, так как у пассажиров(а) нет выписанных билетов.": "Реєстрація на рейс недоступна, оскільки у пасажирів(а) немає виписаних квитків.",
+	// skyFlashes
+	"Социальная сеть уже была привязана ранее": "Соціальна мережа вже була прив'язана раніше",
+	"Аккаунт социальной сети уже используется для входа под другой учетной записью в кабинет SkyUp.": "Акаунт соціальної мережі вже використовується для входу під іншим обліковим записом в кабінет SkyUp.",
+	"Если вы хотите подключить его к текущей учетной записи SkyUp, то вам необходимо выйти из текущей учетной записи SkyUp.": "Якщо ви хочете підключити його до поточного облікового запису SkyUp, то вам необхідно вийти з поточного облікового запису SkyUp.",
+	"Затем войти при помощи данной социальной сети и отвязать ее от учетной записи SkyUp.": "Потім увійти за допомогою цієї соціальної мережі і відв'язати її від облікового запису SkyUp.",
+	"Затем войти снова в текущий аккаунт SkyUp (в котором вы сейчас находитесь) и подключить социальную сеть.": "Потім увійти знову в поточний акаунт SkyUp (в якому ви зараз перебуваєте) і підключити соціальну мережу.",
+	"E-mail не может быть пустым (в настройках социальной сети запрещена передача e-mail)!": "E-mail не може бути порожнім (в налаштуваннях соціальної мережі заборонена передача e-mail)!",
+	"Имя не может быть пустым (в настройках социальной сети запрещена передача имени пользователя)!": "Ім'я не може бути порожнім (в налаштуваннях соціальної мережі заборонена передача імені користувача)!",
+	"E-mail социальной сети не был ранее подтвержден - мы не можем использовать эту учетную запись!": "E-mail соціальної мережі не був раніше підтверджений - ми не можемо використати цей обліковий запис!",
+	"Неизвестная ошибка.": "Невідома помилка.",
+	"Обновите страницу и повторите действие заново.": "Оновіть сторінку і повторіть дію заново.",
+	"Если ошибка повторится, обратитесь, пожалуйста, в колл-центр.": "Якщо помилка повториться, зверніться, будь ласка, в кол-центр.",
+
+	// dates.js
+	"Нет обратных рейсов": "Немає зворотних рейсів",
+	// ticket.management.js
+	"Доп. багаж": "Дод. багаж",
+	"Выбор места": "Вибір місця",
+	"Спорт. об.": "Спорт. об.",
+	"кг": "кг",
+	"Услуга забронирована.": "Послуга заброньована.",
+	"Покупка этой услуги невозможна": "Покупка цієї послуги неможлива",
+	"Для этого пассажира приобретен весь возможный объем данной услуги.": "Для цього пасажира придбано весь можливий обсяг цієї послуги.",
+	"Произошла ошибка. Регистрация недоступна. <br>Перезагрузите страницу, а  если ошибка повторится, пожалуйста, обратитесь в нашу службу клиентской поддержки.": "Виникла помилка. Реєстрація недоступна. <br> Перезавантажте сторінку, а якщо помилка повториться, будь ласка, зверніться в нашу службу клієнтської підтримки.",
+	"Попробуйте еще раз": "Спробуйте ще раз",
+	// myticket
+	"Бронирование не найдено": "Бронювання не знайдено",
+	"Проверьте корректность заполнения полей формы.": "Перевірте коректність заповнення полів форми.",
+	"Управление чартерными рейсами в данный момент недоступно.": "Керування чартерними рейсами наразі недоступне.",
+	// seatsel.js
+	"Пассажир": "Пасажир",
+	"Аварийный ряд": "Аварійний ряд",
+	"<div style=\"font-size:13px;\">Внимание! В целях безопасности вы не сможете сидеть на данном месте, если:<br><br> <ul> <li>У вас есть нарушения слуха или зрения.</li> <li>Вы не можете легко понимать письменный или устный инструктаж на русском/украинском/английском языках.</li> <li>Ваше телосложение, возраст или здоровье не позволяют вам быстро двигаться.</li> <li>Вы беременны.</li> <li>Вам менее 18 лет.</li> <li>Вы путешествуете с младенцем или с пассажиром, которому потребуется ваша помощь в случае возникновения чрезвычайной ситуации.</li> <li>Вы путешествуете с животным.</li></ul><br>Cотрудники авиакомпании SkyUp имеют право пересадить вас, если вы принадлежите к одной из вышеперечисленных категорий, без возврата суммы, уплаченной за данное место.</div>": "<div style=\"font-size:13px;\">Увага! З міркувань безпеки ви не можете сидіти на цьому місці, якщо:<br><br> <ul> <li>У вас є порушення слуху чи зору.</li> <li>Ви не можете легко зрозуміти письмову чи усну інструкцію російською/українською/англійською мовами.</li> <li>Ваша статура, вік чи стан здоров'я не дозволяють вам швидко рухатися.</li> <li>Ви вагітні.</li> <li>Ви молодше 18 років.</li> <li>Ви подорожуєте з немовлям або з пасажиром, який потребуватиме вашої допомоги в разі надзвичайної ситуації.</li> <li>Ви подорожуєте з твариною.</li></ul><br>Співробітники авіакомпанії SkyUp мають право пересадити вас, якщо ви належите до однієї з вищеперерахованих категорій, без повернення суми, сплаченої за це місце.</div>",
+	// termsAndConditionsModal
+	"Обратите внимание!": "Зверніть увагу!",
+	"Аэропорт Париж-Бове (Paris-Beauvais Airport) находится примерно в 75 км от Парижа.": "Аеропорт Париж-Бове (Paris-Beauvais Airport) знаходиться приблизно в 75 км від Парижа.",
+	// Catering
+	"Питание": "Харчування",
+	"Вы выбрали максимальное количество": "Ви вибрали максимальну кількість",
+	"для данного пассажира": "для цього пасажира",
+	"Эта услуга недоступна для младенца.": "Ця послуга недоступна для немовляти.",
+	"Лимит достигнут": "Ліміт досягнутий",
+	"Просто выберите питание взрослому, с которым он путешествует.": "Просто виберіть харчування дорослому, з яким дитина подорожує.",
+	"показать описание": "показати опис",
+	"показать состав": "показати склад",
+	"г": "г",
+	// getBoardingForm.js
+	"Пожалуйста, выберите пассажиров": "Будь ласка, виберіть пасажирів",
+	"Выберите всех пассажиров, которых хотите зарегистрировать на рейс.": "Виберіть всіх пасажирів, яких хочете зареєструвати на рейс.",
+	"Проверьте почту": "Перевірте пошту",
+	"Мы отправили посадочные талоны на ваш email.": "Ми відправили посадкові талони на ваш email.",
+
+	// landing
+	"Человек": "Людина",
+	"Человек ": "Людей",
+	"Человека": "Людини",
+	"Показать ещё": "Показати ще",
+	"Скрыть": "Приховати",
+
+	// chat | refund
+	"Вы": "Ви",
+	"Приветствуем!": "Вітаємо!",
+	"Здравствуйте!": "Вітаємо!",
+	"У вас есть такие возможности получить возмещение стоимости билета:":
+		"Ви маєте такі можливості отримати відшкодування вартості квитка:",
+	"Промокод в размере 110% от стоимости отменяемого бронирования.":
+		"Промокод в розмірі 110% від вартості бронювання, що скасовується.",
+	"Промокод можно использовать в течение года на любой билет или услугу авиакомпании или передать другому лицу, поскольку он не является именным.":
+		"Промокод можна використати протягом року на будь-який квиток або послугу авіакомпанії або передати іншій особі, оскільки він не є іменним.",
+	"Возврат средств. (В данный момент этот тип возврата недоступен, вскоре этот функционал откроется).":
+		"Повернення коштів згідно з умовами вашого тарифу. (Наразі цей тип повернення недоступний, незабаром цей функціонал відкриється).",
+	"Ваш тариф - Basic. Он предусматривает возвращение аэропортовых сборов в размере XXX грн. В связи с большим количеством обращений срок возврата средств составляет от 3 до 6 месяцев.":
+		"Ваш тариф – Basic. Він передбачає повернення аеропортових зборів у розмірі XXX грн. У зв’язку з великою кількістю звернень термін повернення коштів складає від 3 до 6 місяців.",
+	"Пожалуйста, выберите удобный для вас вариант.": "Будь ласка, оберіть зручний для вас варіант.",
+	"Промокод": "Промокод",
+	"Деньги": "Гроші",
+	"Спасибо за ваш выбор.": "Дякуємо за ваш вибір.",
+	"Ваш промокод": "Ваш промокод",
+	"Мы также отправили его на вашу электронную почту.": "Ми також надіслали його на вашу електронну пошту.",
+	"В течение года (до": "Протягом року (до",
+	"включительно": "включно",
+	"вы можете приобрести любой билет или услугу на сайте skyup.aero, просто введя промокод в соответствующее поле на последнем шаге перед оплатой.":
+		"ви можете придбати будь-який квиток або послугу на сайті skyup.aero, просто ввівши промокод в відповідне поле на останньому кроці перед оплатою.",
+	"До встречи на крыльях SkyUp Airlines": "До зустрічі на крилах SkyUp Airlines",
+	"Скопировать промокод": "Скопіювати промокод",
+	"Промокод скопирован": "Промокод скопійовано",
+	"Для возмещения стоимости билета вы выбрали получение промокода.": "Для відшкодування вартості квитка ви вибрали отримання промокоду.",
+	"Это даст вам дополнительные 10% от суммы вашего текущего бронирования, поэтому сумма, которую вы сможете использовать на покупку следующего билета или любой другой услуги на сайте SkyUp, составляет":
+		"Це дасть вам додаткові 10% від суми вашого поточного бронювання, тож сума, яку ви зможете використати на купівлю наступного квитка або будь-якої іншої послуги на сайті SkyUp, складає",
+	"Обратите внимание, что после получения промокода возмещение стоимости билета деньгами будет невозможно.":
+		"Зверніть увагу, що після отримання промокоду відшкодування вартості квитка грішми буде неможливим.",
+	"Хотите подтвердить ваш выбор?": "Бажаєте підтвердити ваш вибір?",
+	"Да, хочу промокод": "Так, хочу промокод",
+	"Нет, начать заново": "Ні, почати заново",
+	"Выберите ниже одно (или несколько) направлений, по которым необходимо сделать возврат.": "Виберіть нижче один (або декілька) напрямків, за якими необхідно зробити повернення.",
+	"Нет доступных билетов для возврата": "Немає доступних квитків для повернення",
+	"и": "та",
+	"Промокод в 110% (мгновенно)": "Промокод в 110% (миттєво)",
+	"Возврат средств (до 6 месяцев)": "Повернення коштів (до 6 місяців)",
+	"Вы выбрали возможность получить возмещение деньгами.": "Ви вибрали можливість отримати відшкодування грошима.",
+	"Ваше бронирование было произведено с помощью промокода/промокодов, поэтому часть средств будет возвращена купоном, а часть, которая была оплачена с карты, будет возвращена на эту карту.":
+		"Ваше бронювання було здійснено за допомогою промокода/промокодів, тому частина коштів буде повернута купоном, а частина, яка була оплачена з картки, буде повернена на цю картку.",
+	"Возврат купоном": "Повернення купоном",
+	"Возврат средствами": "Повернення коштами",
+	"Сумма вашего возмещения будет равняться": "Сума вашого відшкодування буде дорівнювати",
+	"Хотите подтвердить возмещение?": "Хочете підтвердити відшкодування?",
+	"Да, верните деньги": "Так, поверніть гроші",
+	"До новых встреч на крыльях SkyUp Airlines!": "До нових зустрічей на крилах SkyUp Airlines!",
+	"Укажите эти номера при обращении в службу клиентской поддержки, чтобы следить за статусом запроса.":
+		"Вкажіть ці номери при зверненні в службу клієнтської підтримки, щоб стежити за статусом запиту.",
+	"Скопировать номер заявки": "Скопіювати номер заявки",
+	"Скопировать номера заявки": "Скопіювати номери заявки",
+	"Номер заявки скопирован": "Номер заявки скопійований",
+	"Номера заявки скопированы": "Номери заявки скопійовані",
+	"Скопировать номер заявки и промокод": "Скопіювати номер заявки і промокод",
+	"Номер заявки и промокод скопированы": "Номер заявки і промокод скопійовані",
+	"Номер заявки": "Номер заявки",
+	"Скопировать номера заявки и промокод": "Скопіювати номери заявки та промокод",
+	"Номера заявки и промокод скопированы": "Номери заявки і промокод скопійовані",
+	"Номера заявки": "Номери заявки",
+	"Возврат средств.": "Повернення коштів.",
+	"В связи с большим количеством обращений срок возврата средств составляет от 3 до 6 месяцев.": "У зв'язку з великою кількістю звернень термін повернення коштів становить від 3 до 6 місяців.",
+	"Спасибо за ваше обращение.": "Дякуємо за ваше звернення.",
+	"Ваша претензия получена и зарегистрирована под номером": "Ваша претензія отримана та зареєстрована під номером",
+	"Ваша претензия получена и зарегистрирована под номерами": "Ваша претензія отримана та зареєстрована під номерами",
+	"Также вам выписан промокод": "Також вам виписано промокод",
+	"Согласно п. 3 главы 1 раздела XXVII Правил воздушных перевозок пассажиров и багажа, утвержденных приказом Государственной авиационной службы Украины от 26.11.2018 №1239, мы рассмотрим ее в течение трех месяцев от даты ее получения. О результатах рассмотрения вы сможете узнать здесь же, в личном кабинете.":
+		"Згідно з п. 3 глави 1 розділу XXVII Правил повітряних перевезень пасажирів і багажу, затверджених наказом Державної авіаційної служби України від 26.11.2018 №1239, ми розглянемо її протягом трьох місяців від дати її отримання. Про результати розгляду ви зможете дізнатися тут, в особистому кабінеті.",
+	"Чтобы отслеживать статус вашего запроса, при обращении в службу клиентской поддержки, пожалуйста, сообщите номера вашего обращения, указанные выше.":
+		"Щоб відстежувати статус вашого запиту, при зверненні в службу клієнтської підтримки, будь ласка, вкажіть номери вашого звернення, зазначені вище.",
+	"Обращение закрыто.": "Звернення закрито.",
+	"Вы выбрали возможность вывода средств.": "Ви вибрали можливість виведення коштів.",
+	"Претензия будет рассмотрена в течение трех месяцев, после чего сумму, подлежащую возврату, мы зачислим на вашу карту.": "Претензія буде розглянута протягом трьох місяців, після чого суму, що підлягає поверненню, ми зарахуємо на вашу карту.",
+	"Помните, что в течение этого времени вы можете пользоваться всеми средствами на балансе для покупки билетов или услуг авиакомпании. Если вы потратите и ту их часть, которая подлежит возврату, вывод на карту будет невозможен.":
+		"Пам’ятайте, що протягом цього часу ви можете користуватися усіма коштами на балансі для купівлі квитків або послуг авіакомпанії. Якщо ви витратите і ту їхню частину, що підлягає поверненню, виведення на картку буде неможливим.",
+	"Желаете отправить претензию на возврат средств?": "Бажаєте відправити претензію на повернення коштів?",
+	"Да, отправить претензию": "Так, відправити претензію",
+	"Средства по промокоду успешно зачислены на ваш баланс": "Кошти за промокодом успішно зараховані на ваш баланс",
+	"Готово": "готово",
+	"Данный промокод уже или еще не активен.": "Цей промокод уже або ще не активний.",
+	"Данный промокод невозможно перевести на баланс.": "Цей промокод неможливо перевести на баланс.",
+	"Можете использовать его, введя в соответствующее поле на последнем шаге перед оплатой.": "Можете використати його, ввівши у відповідне поле на останньому кроці перед оплатою.",
+	"Данные о сумме к выводу на карту устарели.": "Дані про суму повернення на карту застаріли.",
+	"Обновите страницу и попробуйте заново.": "Оновіть сторінку і спробуйте ще раз.",
+	"Ваш ответ получен.": "Ваш відповідь отримана.",
+	"Добрый день!": "Добрий день!",
+	"Мы рассмотрели вашу претензию на возврат средств. Согласно правилам авиакомпании и условиям вашего тарифа,": "Ми розглянули вашу претензію на повернення коштів. Відповідно до правил авіакомпанії і згідно з умовами вашого тарифу,",
+	"подлежат возвращению на банковскую карточку.": "підлягають поверненню на банківську картку.",
+	"Деньги будут зачислены в ближайшее время, если ваш запрос по-прежнему актуален.": "Гроші будуть зараховані найближчим часом, якщо ваш запит досі актуальний.",
+	"Поскольку вы частично потратили средства, которые были зачислены на ваш баланс после отмены рейса": "Оскільки ви частково витратили кошти, які були зараховані на ваш баланс після скасування рейсу",
+	"Поскольку вы частично потратили средства, которые были зачислены на ваш баланс после отмены рейсов": "Оскільки ви частково витратили кошти, які були зараховані на ваш баланс після скасування рейсів",
+	"в сумме": "в сумі",
+	"остаток суммы к выводу на карту составляет": "залишок суми до виведення на картку становить",
+	"Вывести на карту": "Вивести на картку",
+	"Оставить на балансе": "Залишити на балансі",
+	"Спасибо! Средства будут зачислены в ближайшее время.": "Дякуємо! Кошти будуть зараховані найближчим часом.",
+	"Спасибо, ждем ваши документы.": "Дякуємо, чекаємо на ваші документи.",
+	"Отличный выбор! До встречи на борту.": "Чудовий вибір! До зустрічі на борту.",
+	"Спасибо за ваш выбор! До встречи на борту.": "Дякуємо за ваш вибір! До зустрічі на борту.",
+	"Не закрывайте страницу, идет сохранение чата": "Не закривайте сторінку, йде збереження чату",
+	"Чат сохранен": "Чат збережено",
+	"Мы рассмотрели вашу претензию на возврат средств. Спасибо за ожидание.":
+		"Ми розглянули вашу претензію на повернення коштів. Дякуємо за очікування.",
+	"Для зачисления средств, пожалуйста, пришлите собственноручно заверенную скан-копию / фото вашего заграничного или внутреннего паспорта, а также паспортов всех пассажиров в отмененном бронировании (с текстом «Копия верна», подписью и датой), на email:":
+		"Для зарахування коштів, будь ласка, надішліть власноруч засвідчену скан-копію / фото вашого закордонного або внутрішнього паспорта, а також паспортів всіх пасажирів у скасованому бронюванні (з текстом «Копія вірна», підписом і датою), на email:",
+	"В теме письма обязательно укажите номер бронирования билета.": "В темі листа обов'язково вкажіть номер бронювання квитка.",
+	"Вы также можете оставить эти средства на балансе, воспользовавшись такими преимуществами:":
+		"Ви також можете залишити ці кошти на балансі, скориставшись такими перевагами:",
+	"средства хранятся бессрочно;": "кошти зберігаються безстроково;",
+	"их можно использовать на покупку любых билетов или услуг авиакомпании на сайте":
+		"їх можна використати на покупку будь-яких квитків або послуг авіакомпанії на сайті",
+	"до последней гривны и на любое количество бронирований;": "до останньої гривні і на будь-яку кількість бронювань;",
+	"на эти деньги можно купить билеты не только для себя, но и для друзей и родных;": "на ці кошти можна придбати квитки не лише для себе, а й для друзів та рідних;",
+	"вы сможете вывести на карту остаток средств в будущем.": "ви матимете можливість вивести на картку залишок коштів у майбутньому.",
+
+	// contacts
+	"Звонок заказан": "Дзвінок замовлений",
+	"Мы свяжемся с вами в ближайшее время :)": "Ми зв'яжемося з вами найближчим часом :)",
+	//board
+	"Нет результатов поиска": "Немає результатів пошуку",
+	// modals texts
+	"Ваш браузер не может сохранить ответ, поэтому блок с COOKIE POLICY будет появляться постоянно при посещении нашего сайта.<br><br>- возможно, вы пользуетесь Safari в приватном режиме. Попробуйте войти на сайт в обычном режиме, чтобы браузер смог сохранить ваш ответ .<br>- если же вы пользуетесь устаревшим браузером, рекомендуем перейти на более современный, например, <a style='color: #0092da;' href='https://www.google.com/intl/ru/chrome/' target='_blank' rel='noopener noreferrer'>chrome</a>.": "Ваш браузер не може зберегти відповідь, тому блок з COOKIE POLICY буде з'являтися постійно при відвідуванні нашого сайту.<br><br><br>- можливо, ви користуєтеся Safari в приватному режимі. Спробуйте увійти на сайт у звичайному режимі, щоб браузер зміг зберегти вашу відповідь.<br>- якщо ж ви користуєтеся застарілим браузером, рекомендуємо перейти на більш сучасний, наприклад, <a style='color: #0092da;' href ='https://www.google.com/intl/uk/chrome/' target='_blank' rel='noopener noreferrer'>chrome</a>.",
+	// promo-for-u
+	"На ваш email отправлен промокод": "На ваш email було відправлено промокод",
+	// faq
+	"К моему билету": "До мого квитка",
+	"Любите вкусно поесть в дороге?<br>Заказывайте заранее один из наших Sky Box с разнообразными ланчами.<br><br>Переходите в раздел": "Любите смачно поїсти в дорозі?<br>Замовте заздалегідь один з наших Sky Box з різноманітними ланчами.<br><br>Переходьте в розділ",
+	"Мой билет": "Мій квиток",
+	"и выбирайте опцию \"Предзаказ питания\" среди других дополнительных услуг.<br><br>Летайте со вкусом!": "та вибирайте опцію \"Передзамовлення харчування\" серед інших додаткових послуг.<br><br>Літайте зі смаком!",
+	"Предзаказ питания": "Передзамовлення харчування",
+	// skyup-workers
+	"Не спешите :)": "Не поспішайте :)",
+	"Заполните, пожалуйста, форму": "Заповніть, будь ласка, форму",
+	"Понятно": "Зрозуміло",
+	"Выберите, пожалуйста, пассажира": "Виберіть, будь ласка, пасажира",
+	"Выберите, пожалуйста, тариф": "Виберіть, будь ласка, тариф",
+	"По этому бронированию уже путешествует один младенец. Вы не можете добавить еще одного младенца к этому билету": "За цим бронюванням вже подорожує одне немовля. Ви не можете додати ще одне немовля до цього квитка",
+	"Сначала вы должны выбрать взрослого, который полетит с младенцем": "Спочатку ви повинні вибрати дорослого, який полетить з немовлям",
+	"Сначала вы должны выбрать взрослого, который полетит с ребёнком": "Спочатку ви повинні вибрати дорослого, який полетить з дитиною",
+	"Сначала вы должны заполнить данные о пассажире": "Спочатку ви повинні заповнити дані про пасажира",
+	"Сначала вы должны выбрать второго взрослого, который полетит с младенцем": "Спочатку ви повинні вибрати другого дорослого, який полетить з немовлям",
+	"Сначала вы должны выбрать третьего взрослого, который полетит с младенцем": "Спочатку ви повинні вибрати третього дорослого, який полетить з немовлям",
+	"Сначала прикрепите другого взрослого к младенцу": "Спочатку прикрепіть іншого дорослого до дитини",
+	"(младенец)": "(немовля)",
+	"(ребёнок)": "(дитина)",
+	"(взрослый)": "(дорослий)",
+	// Вакансии
+	"Спасибо!": "Дякуємо!",
+	"Нам очень приятно, что вы заинтересовались нашим предложением и направили свое резюме в компанию SkyUp.<br><br>Мы рассмотрим ваше резюме в ближайшее время. Если ваш опыт и навыки будут соответствовать вакансии, мы обязательно с вами свяжемся и пригласим на собеседование.<br><br>Если вы не получили от нас ответа в течение 14 дней, это значит, что мы пока не готовы к сотрудничеству по данной позиции.<br><br> Мы обязательно сохраним ваше резюме в нашей базе и сможем вернуться к вашей кандидатуре в случае появления позиций, которые соответствуют вашему профилю.<br><br>Хорошего дня!": "Нам дуже приємно, що ви зацікавилися нашою пропозицією та направили своє резюме до компанії SkyUp.<br><br>Ми розглянемо ваше резюме найближчим часом. Якщо ваш досвід і навички будуть відповідати вакансії, ми обов'язково з вами зв'яжемося і запросимо на співбесіду.<br><br>Якщо ж ви не отримали від нас відповіді протягом 14 днів, це означає, що ми поки не готові до співпраці за цією позицією.<br><br> Ми обов'язково збережемо ваше резюме в нашій базі і зможемо повернутися до вашої кандидатури у випадку появи позицій, які відповідають вашому профілю.<br><br>Гарного дня!",
+	"Упс, резюме не отправлено": "Упс, резюме не відправлено",
+	"Файл слишком большой. Размер не должен превышать 1 МБ.": "Файл занадто великий. Розмір не повинен перевищувати 1 МБ.",
+	// transfer
+	"Трансфер на эту дату недоступен :(": "Трансфер на цю дату недоступний :(",
+	// city-breaks
+	"Что такое CityBreaks?": "Що таке CityBreaks?",
+	"Скрыть описание": "приховати опис",
+	"В этом СityBreak нет доступных мест для выбранного количества пассажиров.": "У цьому СityBreak немає доступних місць для вибраної кількості пасажирів.",
+	"Пожалуйста, вернитесь на шаг назад и выберите другой СityBreak.": "Будь ласка, поверніться на крок назад і виберіть інший СityBreak.",
+	"ребенок": "дитина",
+	"ребенка": "дитини",
+	"взрослый": "дорослий",
+	"взрослых": "дорослих",
+	"возраст": "вік",
+	"Нет доступных CityBreaks по этому направлению.": "Немає доступних CityBreaks за цим напрямком.",
+	"Возраст ребенка на момент вылета должен быть меньше 12-ти лет": "Вік дитини на момент вильоту повинен бути менше 12-ти років",
+
+	//results
+	"Успешно :)": "Успішно :)",
+	"Успешно": "Успішно",
+	"Любите вкусно поесть в дороге?<br>Заказывайте заранее один из наших SkyBox с разнообразными ланчами.<br><br>Выбирайте опцию \"Питание\" среди других дополнительных услуг.<br><br>Летайте со вкусом!": "Любите смачно поїсти в дорозі?<br>Замовте заздалегідь один з наших SkyBox з різноманітними ланчами.<br><br>Вибирайте опцію \"Харчування\" серед інших додаткових послуг.<br><br>Літайте зі смаком!",
+	"Данные об этом пассажире успешно сохранены": "Дані про цього пасажира успішно збережені",
+	"Какие-то проблемы с сервером, мы уже отправили отряд для устранения этой проблемы :)": "Якісь проблеми з сервером, ми вже відправили загін для усунення цієї проблеми :)",
+	"Данные об этом пассажире успешно удалены": "Дані про цього пасажира успішно видалені",
+	"Предупреждение": "Попередження",
+	"Вы уверены, что хотите удалить данные этого пассажира?": "Ви впевнені, що хочете видалити дані цього пасажира?",
+	"После того, как вы покинете эту страницу, цены за билеты будут отображаться без скидок (как для обычных пользователей).<br><br>Чтобы снова включить отображение скидок,  перейдите сюда со страницы Сотрудникам": "Після того, як ви залишите цю сторінку, ціни за квитки будуть відображатися без знижок (як для звичайних користувачів).<br><br>Щоб знову включити відображення знижок, перейдіть сюди зі сторінки Співробітникам",
+	"Ок, перейти": "Ок, перейти",
+	"Удалить": "Видалити",
+	"Вы уже внесли данные всех взрослых": "Ви вже внесли дані всіх дорослих",
+	"Вы уже внесли данные всех детей": "Ви вже внесли дані всіх дітей",
+	"Вы уже внесли данные всех младенцев": "Ви вже заповнили внесли дані всіх немовлят",
+	"Применение невозможно": "Застосування неможливе",
+	"Личный баланс": "Особистий баланс",
+	"Зачислите этот промокод на свой баланс, перейдя на страницу": "Зарахуйте цей промокод на свій баланс, перейшовши на сторінку",
+	"После чего используйте средства с баланса.": "Після чого використовуйте кошти з балансу.",
+	"Вы исчерпали допустимое количество ввода неверного промокода. Попробуйте продолжить зачисление через 5 минут.": "Ви вичерпали допустиму кількість введення невірного промокоду. Спробуйте продовжити зарахування через 5 хвилин.",
+	"Превышено количество пассажиров по этому промокоду": "Перевищена кількість пасажирів за цим промокодом",
+
+	// Животные
+	"Перевозка животного": "Перевезення тварини",
+	"Места закончились": "Місця закінчилися",
+
+	// Gift Certificate
+
+	// карта полетов
+	"Поиск билетов": "Пошук квитків",
+	"в полете": "в польоті",
+	"посадка": "посадка",
+	"высадка": "висадка",
+	"Кровать": "Ліжко",
+	"дней": "днів",
+	"рейс выполняется по дням:": "рейс виконується по днях:",
+	"Вы ищете билет на одного человека.": "Ви шукаєте квиток на одну людину.",
+	"В условиях обсервации вам будет предоставлена одна кровать в двухместном номере с возможным подселением в номер другого человека.": "В умовах обсервації вам буде надано одне ліжко в двомісному номері з можливим підселенням в номер іншої людини.",
+	"Вы можете поменять номер на одноместный с доплатой на объекте размещения.": "Ви можете змінити номер на одномісний з доплатою на об'єкті розміщення.",
+
+	"В полис должен входить как минимум один страховой случай": "До полісу повинен входити принаймні один страховий випадок",
+	"Чтобы выбрать страховку, пожалуйста, сначала заполните все данные о пассажире.": "Щоб вибрати страховку, будь ласка, спочатку заповніть всі дані про пасажира.",
+	"Чтобы выбрать страховку, пожалуйста, сначала заполните все данные о пассажирах.": "Щоб вибрати страховку, будь ласка, спочатку заповніть всі дані про пасажирів.",
+	"В данный момент приобрести страховку могут только граждане Украины.": "Зараз придбати поліс страхування можуть лише громадяни України.",
+	"Важно!": "Важливо!",
+	"После прохождения онлайн-регистрации на рейс из Дубая <b>обязательно обратитесь на стойку регистрации в аэропорту</b> для получения распечатанного посадочного талона (бесплатно). <br> Эта необходимость связана с требованиями иммиграционных властей ОАЭ. Без талона установленного образца авиакомпания не сможет допустить пассажира к посадке.":
+		"Після проходження онлайн-реєстрації на рейс з Дубая <b>обов'язково зверніться на стійку реєстрації в аеропорту</b> для отримання роздрукованого посадкового талона (безкоштовно). <br>Така необхідність пов’язана із вимогами імміграційної влади ОАЕ. Без талона встановленого зразка авіакомпанія не зможе допустити пасажира до посадки.",
+	"Cкопировать ссылку": "Cкопіювати посилання",
+	"Ссылка скопирована": "Посилання скопійовано",
+	"Поделиться через facebook": "Поділитися через facebook",
+	// change-date
+	"По этому бронированию нет доступных рейсов для изменения даты вылета.": "За цим бронюванням немає доступних рейсів для зміни дати вильоту.",
+	"Подтверждаю выбор даты": "Підтверджую вибір дати",
+	"доплата": "доплата",
+	"Подтвердить": "Підтвердити",
+	"Перейти к оплате": "Перейти до оплати",
+	"Чтобы изменить дату на выбранную, необходимо подтвердить выбор.": "Щоб змінити дату на вибрану, необхідно підтвердити вибір.",
+	"Пожалуйста, выберите пассажиров, для которых нужно изменить дату вылета.": "Будь ласка, виберіть пасажирів, для яких потрібно змінити дату вильоту.",
+	"Смена даты рейса прошла успешно.": "Зміна дати рейсу пройшла успішно.",
+	"Перейти на страницу оплаты": "Перейти на сторінку оплати",
+	"Выберите ниже одно направление, для которого вы хотите изменить дату.": "Виберіть нижче один напрямок, для якого ви хочете змінити дату.",
+	"По этому направлению нет доступных рейсов.": "За цим напрямком немає доступних рейсів.",
+	"Пожалуйста, повторите действие позже или обратитесь в наш контакт-центр.": "Будь ласка, повторіть дію пізніше або зверніться до нашого контакт-центру.",
+	"Выберите одну из возможных дат для переноса рейса.": "Виберіть одну з можливих дат для переносу рейсу.",
+	"Выбрать дату рейса": "Вибрати дату рейсу",
+	"Выбрать другую дату рейса": "Вибрати іншу дату рейсу",
+	"Чтобы изменить дату на выбранную, необходимо совершить доплату в размере": "Щоб змінити дату на вибрану, необхідно зробити доплату в розмірі",
+	"день": "день",
+	"д.": "д.",
+	"Выбран": "Вибрано",
+	"Добавить к бронированию": "Додати до бронювання",
+	"Добавлено к бронированию": "Додано до бронювання",
+	"Согласно правилам безопасности, выбранное место (-а) не могут занимать пассажиры младше 16 и старше 65 лет.":
+		"Згідно з правилами безпеки, вибране місце (-я) не можуть займати пасажири, молодші 16 та старші 65 років.",
+	"Выбранное место (-а) не предназначено для пассажиров в возрасте до 16 и старше 65 лет.":
+		"Вибране місце (-я) не призначене для пасажирів віком до 16 і від 65 років.",
+	"Извините, пассажиры с домашними любимцами не могут путешествовать в выбранной зоне мест.":
+		"Вибачте, пасажири з домашніми улюбленцями не можуть подорожувати у вибраній вами зоні місць.",
+	"Согласно правилам безопасности, пассажиры категории WCHC / WCHR / WCHS не могут лететь на местах в выбранной зоне.":
+		"Згідно з правилами безпеки, пасажири категорії WCHC / WCHR / WCHS не можуть летіти на місцях у вибраній зоні.",
+	"Пожалуйста, выберите другое место (-а).": "Будь ласка, виберіть інше місце (-я).",
+	"Путешествие с детьми": "Подорожі з дітьми",
+	"Проверьте, пожалуйста, возраст, который вы указали для взрослого пассажира.": "Перевірте, будь ласка, вік, який ви вказали для дорослого пасажира.",
+	"Если вы хотите забронировать билет для ребенка, путешествующего без сопровождения взрослых, ознакомьтесь с": "Якщо ви хочете забронювати квиток для дитини, яка подорожує без супроводу дорослих, ознайомтеся з",
+	"правилами перевозки детей": "правилами перевезення дітей",
+	"Дети в возрасте до 16-ти лет могут путешествовать только в сопровождении взрослого старше 18-ти лет.": "Діти у віці до 16-ти років можуть подорожувати лише в супроводі дорослого старше 18-ти років.",
+	// ПРОВЕРЕННЫЕ ПЕРЕВОДЫ END
+
+	// highpass проверить переводы
+	"Аэропорт без очередей": "Аеропорт без черг",
+	"Выбрать услугу для пассажира": "Вибрати послугу для пасажира",
+	"Стоимость": "Вартість",
+	"Какие услуги входят в пакет": "Які послуги включені до пакету",
+	"Данная услуга недоступна.": "Ця послуга недоступна.",
+	"Чтобы выбрать услугу, пожалуйста, сначала заполните дату рождения пассажира.": "Щоб вибрати послугу, будь ласка, спочатку заповніть дату народження пасажира.",
+
+	// Медицинское тестирование start
+	"мин": "хв",
+	"часов": "годин",
+	"Добавлено": "Додано",
+	"Тест на covid-19": "Тест на covid-19",
+	"ПЦР-тест": "ПЛР-тест",
+	"ПЦР-тест в аеропорту Бориспіль": "ПЛР-тест в аеропорту Бориспіль",
+	"Тест на антиген": "Тест на антиген",
+	"Тест на ангинен в аэропорту Борисполь": "Тест на антиген в аеропорту Бориспіль",
+	"ПЦР-тест выявляет наличие в организме коронавируса (SARS-CoV-2), который является возбудителем COVID-19, путем определения его генетического материала (РНК).": "ПЛР-тест виявляє наявність в організмі коронавірусу (SARS-CoV-2), який є збудником COVID-19, шляхом визначення його генетичного матеріалу (РНК).",
+	"Предназначен для выявления антигена коронавируса (SARS-CoV-2) в образцах из ротоглотки / носоглотки.": "Призначений для виявлення антигену коронавірусу (SARS-CoV-2) в зразках з ротоглотки / носоглотки.",
+	"Метод забора: мазок из ротоглотки / носоглотки.": "Метод забору: мазок з ротоглотки / носоглотки",
+	"Услуга недоступна для заказа": "Послуга недоступна для замовлення",
+	"К сожалению, пока что мы можем оформить услугу «Тест на COVID-19» только для рейсов с вылетом из Киева.": "На жаль, поки що ми можемо оформити послугу «Тест на COVID-19» лише для рейсів з вильотом із Києва.",
+
+	// group-booking
+	"В вашем бронировании менее 10 пассажиров. Может быть, вы забыли добавить кого-нибудь еще? :)": "У вашому бронюванні менше 10 пасажирів. Можливо, ви забули додати ще когось? :)",
+	"Условия для групповой перевозки применяются к группе не менее 10 человек.": "Умови для групового перевезення застосовуються до групи з не менш як 10 осіб.",
+	"Обратите внимание! ": "Attention!",
+
+	// Subscribe modal
+	"Путешествуйте выгодно!": "Подорожуйте вигідно!",
+	"Получайте актуальные новости и скидки на билеты SkyUp Airlines": "Отримуйте актуальні новини та знижки на квитки SkyUp Airlines",
+	"Email должен содержать не более 255 символов." : "Email повинен містити не більше 255 символів.",
+    "Адрес электронной почты заполнен некорректно." : "Адреса електронної пошти заповнена некоректно.",
+    "Подписаться" : "Підписатися",
+	"Больше не показывать": "Більше не показувати",
+    "Предпочитаете мессенджеры?" : "Віддаєте перевагу месенджерам?",
+    "Присоединяйтесь!" : "Приєднуйтесь!",
+
+	// НЕПРОВЕРЕННЫЕ ПЕРЕВОДЫ START
+	"Добавить": "Додати",
+	"до": "до",
+	"Запрос успешно отправлен!": "Запит успішно відправлено!",
+	"Исправьте ошибки": "Виправте помилки",
+	"Или": "Aбо",
+	"Ошибка при отправке email, если в течении 2-х часов письмо не придет вам на почту, пожалуйста, повторите восстановление пароля.": "Помилка при відправці email, якщо протягом 2-х годин лист не прийде вам на пошту, будь ласка, повторіть відновлення пароля.",
+	"Идентификатор не найден": "Ідентифікатор не знайдено",
+	"Идентификатор уже активирован": "Ідентифікатор вже активований",
+	"Ошибка валидации формы": "Помилка валідації форми",
+	"Ошибка обработки формы.": "Помилка обробки форми.",
+	"Не удалось отправить письмо.": "Не вдалося відправити лист.",
+	"Ошибка на сервере.": "Помилка на сервері.",
+	"Вам отправлено письмо с идентификатором": "Вам відправлено лист з ідентіфіктором.",
+	"Пожалуйста, проверьте почту.": "Будь ласка, перевірте пошту.",
+	"Продано": "Продано",
+	"Не удалось проверить цены за выбранные дополнительные услуги.": "Не вдалося перевірити ціни за обрані додаткові послуги.",
+	"Этот промокод оформлен на другого человека": "Цей промокод оформлено на іншу людину",
+	"Не удалось выбрать услугу": "Не вдалося вибрати послугу",
+	"Чтоб преобрести данную услугу, среди пассажиров, которым ее выбрали, должен быть пассажир возрастом от": "Щоб придбати дану послугу, серед пасажирів, яким її вибрали, повинен бути пасажир віком від",
+	"лет": "років",
+	"Вначале выберите данную услугу пассажиру возрастом от": "Спочатку виберіть дану послугу пасажирові віком від",
+	"После чего можете выбрать услугу этому пассажиру.": "Після чого можете вибрати послугу для цього пасажира.",
+	// НЕПРОВЕРЕННЫЕ ПЕРЕВОДЫ END
+
+	// new year promotion
+	"чел.": "ос.",
+	"попутчик": "попутника",
+	"попутчиков": "попутників",
+	"Нас уже собралась компания из": "Нас вже зібралася компанія з",
+	"— моя мечта!": "— моя мрія!",
+	"Я очень хочу полететь туда рейсом SkyUp Airlines": "Я дуже хочу полетіти туди рейсом SkyUp Airlines",
+	"Обещаю вести себя хорошо в следующем году!": "Присягаюся, я буду добре поводитись наступного року!",
+	"Честное слово, в этом году мы все вели себя хорошо!": "Присягаюся, цьогоріч ми всі були чемними!",
+	"С нетерпением жду ответа": "З нетерпінням чекаю на відповідь",
+	"Было бы здорово, если бы ты помог и с обратным рейсом": "Було б чудово, якби ти допоміг і зі зворотним рейсом",
+	"Пожалуйста, обновите страницу. Если ошибка повторится, попробуйте еще раз позже.": "Будь ласка, оновіть сторінку. Якщо помилка повториться, спробуйте ще раз пізніше.",
+
+	// общая фраза, должна оставаться в самом низу (чтоб не пришлось постоянно с запятыми возится, при добавление новой фразы)
+	"Извините": "Вибачте"
+}
+;
+    </script>
+<script src="/build/js/best.js?v=1649186301"></script>
+
+<!-- 0.0136878490448 -->
+</body></html>
